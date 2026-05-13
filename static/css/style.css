@@ -63,18 +63,50 @@ nav a:hover { color: var(--accent); }
 main { min-height: 100vh; }
 
 .hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   min-height: calc(82vh - 64px);
   display: flex;
   align-items: flex-end;
   padding: min(8vw, 104px);
-  background:
-    linear-gradient(90deg, rgba(5, 9, 12, 0.84), rgba(5, 9, 12, 0.5) 46%, rgba(5, 9, 12, 0.18)),
-    linear-gradient(180deg, rgba(5, 9, 12, 0.1), rgba(5, 9, 12, 0.74)),
-    url("../media/example_concert_sr.png") center / cover no-repeat;
+  background: #11181f url("../media/videos/show1_poster.jpg") center / cover no-repeat;
   color: #fff;
 }
 
+.hero::before,
+.hero::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+}
+
+.hero::before {
+  z-index: -1;
+  background:
+    linear-gradient(90deg, rgba(5, 9, 12, 0.88), rgba(5, 9, 12, 0.58) 48%, rgba(5, 9, 12, 0.25)),
+    linear-gradient(180deg, rgba(5, 9, 12, 0.08), rgba(5, 9, 12, 0.78));
+}
+
+.hero::after {
+  z-index: -2;
+  background: rgba(8, 13, 17, 0.2);
+}
+
+.hero-video {
+  position: absolute;
+  inset: -28px;
+  z-index: -3;
+  width: calc(100% + 56px);
+  height: calc(100% + 56px);
+  object-fit: cover;
+  filter: blur(10px) saturate(1.16);
+  transform: scale(1.04);
+}
+
 .hero-copy {
+  position: relative;
   max-width: 1000px;
 }
 
@@ -173,10 +205,126 @@ p {
 }
 
 .intro-grid,
-.takeaway-grid {
+.takeaway-grid,
+.video-note {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 30px;
+}
+
+.video-note {
+  margin-bottom: 24px;
+}
+
+.video-test-grid {
+  display: grid;
+  gap: 26px;
+}
+
+.video-case {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.video-case-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.video-case-head h3 {
+  margin-bottom: 0;
+}
+
+.video-case-head span {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.case-label {
+  margin: 0 0 6px;
+  color: var(--accent-2);
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.video-compare {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  background: #dfe5e7;
+}
+
+.video-compare figure {
+  min-height: 260px;
+}
+
+.video-compare video,
+.sr-slot video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #11181f;
+}
+
+.sr-slots {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: #dfe5e7;
+  border-top: 1px solid #dfe5e7;
+}
+
+.sr-slot {
+  position: relative;
+  display: grid;
+  min-height: 180px;
+  place-items: center;
+  padding: 24px;
+  background:
+    linear-gradient(135deg, rgba(23, 104, 92, 0.08), rgba(194, 78, 56, 0.07)),
+    #fff;
+  color: var(--muted);
+  text-align: center;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.sr-slot::before {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: #fff4df;
+  color: #7d4b08;
+  content: "reserved slot";
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.sr-slot.is-ready {
+  display: block;
+  min-height: 0;
+  padding: 0;
+  background: #11181f;
+  text-align: left;
+}
+
+.sr-slot.is-ready::before {
+  content: none;
 }
 
 .pipeline {
@@ -408,13 +556,15 @@ tr:last-child td { border-bottom: 0; }
   .section-heading,
   .intro-grid,
   .takeaway-grid,
+  .video-note,
   .method-split,
   .comparison-grid {
     grid-template-columns: 1fr;
   }
 
   .pipeline,
-  .experiment-grid {
+  .experiment-grid,
+  .sr-slots {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -436,6 +586,7 @@ tr:last-child td { border-bottom: 0; }
     width: 100%;
     justify-content: space-between;
     gap: 10px;
+    overflow-x: auto;
     font-size: 13px;
   }
 
@@ -456,8 +607,18 @@ tr:last-child td { border-bottom: 0; }
   .pipeline,
   .experiment-grid,
   .image-row.four,
+  .video-compare,
+  .sr-slots,
   .pending-panel {
     grid-template-columns: 1fr;
+  }
+
+  .video-case-head {
+    display: grid;
+  }
+
+  .video-case-head span {
+    white-space: normal;
   }
 
   .pipeline article,

@@ -11,6 +11,7 @@
     <a class="brand" href="#top">FocusVSR</a>
     <nav aria-label="Project sections">
       <a href="#method">Method</a>
+      <a href="#videos">Videos</a>
       <a href="#results">Results</a>
       <a href="#experiments">Experiments</a>
       <a href="#roadmap">Roadmap</a>
@@ -19,6 +20,9 @@
 
   <main>
     <section class="hero" id="top">
+      <video class="hero-video" autoplay muted loop playsinline poster="static/media/videos/show1_poster.jpg">
+        <source src="static/media/videos/hero_show1_loop.mp4" type="video/mp4">
+      </video>
       <div class="hero-copy">
         <p class="eyebrow">AIAA3201 Video Super-Resolution Project</p>
         <h1>FocusVSR</h1>
@@ -29,6 +33,81 @@
           <span>Uncertainty mask</span>
           <span>Selective refinement</span>
         </div>
+      </div>
+    </section>
+
+    <section class="section tinted" id="videos">
+      <div class="section-heading">
+        <p class="kicker">Video Testbed</p>
+        <h2>Ground-truth clips and generated 4x low-resolution inputs</h2>
+      </div>
+      <div class="video-note">
+        <p>
+          These two clips are treated as GT references for the live demo. The LR videos below are generated from the GT clips using a 4x spatial downsampling pipeline, then displayed at the same size so the loss of texture is easy to inspect.
+        </p>
+        <p>
+          Future super-resolution outputs can be dropped into the reserved file slots without redesigning this page.
+        </p>
+      </div>
+
+      <div class="video-test-grid">
+        <article class="video-case" data-sync-group="show1">
+          <div class="video-case-head">
+            <div>
+              <p class="case-label">Show 1</p>
+              <h3>Long real-motion GT clip</h3>
+            </div>
+            <span>GT 720p web proxy · LR 180px input</span>
+          </div>
+          <div class="video-compare">
+            <figure>
+              <video controls muted playsinline preload="metadata" poster="static/media/videos/show1_poster.jpg" data-sync-video>
+                <source src="static/media/videos/show1_gt.mp4" type="video/mp4">
+              </video>
+              <figcaption>GT reference</figcaption>
+            </figure>
+            <figure>
+              <video controls muted playsinline preload="metadata" poster="static/media/videos/show1_poster.jpg" data-sync-video>
+                <source src="static/media/videos/show1_lr_x4.mp4" type="video/mp4">
+              </video>
+              <figcaption>4x LR input</figcaption>
+            </figure>
+          </div>
+          <div class="sr-slots">
+            <div class="sr-slot" data-video-slot data-title="BasicVSR" data-video-src="static/media/videos/show1_basicvsr.mp4">BasicVSR result pending</div>
+            <div class="sr-slot" data-video-slot data-title="BasicVSR++" data-video-src="static/media/videos/show1_basicvsrpp.mp4">BasicVSR++ result pending</div>
+            <div class="sr-slot" data-video-slot data-title="FocusVSR" data-video-src="static/media/videos/show1_focusvsr.mp4">FocusVSR result pending</div>
+          </div>
+        </article>
+
+        <article class="video-case" data-sync-group="show2">
+          <div class="video-case-head">
+            <div>
+              <p class="case-label">Show 2</p>
+              <h3>Short high-detail GT clip</h3>
+            </div>
+            <span>GT 720p web proxy · LR 180px input</span>
+          </div>
+          <div class="video-compare">
+            <figure>
+              <video controls muted playsinline preload="metadata" poster="static/media/videos/show2_poster.jpg" data-sync-video>
+                <source src="static/media/videos/show2_gt.mp4" type="video/mp4">
+              </video>
+              <figcaption>GT reference</figcaption>
+            </figure>
+            <figure>
+              <video controls muted playsinline preload="metadata" poster="static/media/videos/show2_poster.jpg" data-sync-video>
+                <source src="static/media/videos/show2_lr_x4.mp4" type="video/mp4">
+              </video>
+              <figcaption>4x LR input</figcaption>
+            </figure>
+          </div>
+          <div class="sr-slots">
+            <div class="sr-slot" data-video-slot data-title="BasicVSR" data-video-src="static/media/videos/show2_basicvsr.mp4">BasicVSR result pending</div>
+            <div class="sr-slot" data-video-slot data-title="BasicVSR++" data-video-src="static/media/videos/show2_basicvsrpp.mp4">BasicVSR++ result pending</div>
+            <div class="sr-slot" data-video-slot data-title="FocusVSR" data-video-src="static/media/videos/show2_focusvsr.mp4">FocusVSR result pending</div>
+          </div>
+        </article>
       </div>
     </section>
 
