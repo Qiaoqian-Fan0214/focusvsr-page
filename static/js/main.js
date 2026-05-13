@@ -1,5 +1,17 @@
 document.documentElement.classList.add("ready");
 
+document.querySelectorAll("[data-image-slider]").forEach((slider) => {
+  const input = slider.querySelector('input[type="range"]');
+  if (!input) return;
+
+  const update = () => {
+    slider.style.setProperty("--split", `${input.value}%`);
+  };
+
+  input.addEventListener("input", update);
+  update();
+});
+
 document.querySelectorAll("[data-sync-group]").forEach((group) => {
   const videos = Array.from(group.querySelectorAll("[data-sync-video]"));
 

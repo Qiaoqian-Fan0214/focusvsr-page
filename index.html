@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>FocusVSR</title>
-  <link rel="stylesheet" href="static/css/style.css">
+  <link rel="stylesheet" href="static/css/style.css?v=slider-hero-restore">
 </head>
 <body>
   <header class="site-header">
@@ -21,7 +21,7 @@
   <main>
     <section class="hero" id="top">
       <video class="hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
-        <source src="static/media/videos/hero_show1_loop.mp4" type="video/mp4">
+        <source src="static/media/videos/hero_show1_loop.mp4?v=slider-hero-restore" type="video/mp4">
       </video>
       <div class="hero-copy">
         <p class="eyebrow">AIAA3201 Video Super-Resolution Project</p>
@@ -197,9 +197,15 @@
         </article>
 
         <article class="comparison-card">
-          <figure class="stacked-media">
+          <figure class="image-slider" data-image-slider style="--split: 50%;">
             <img src="static/media/example_concert_lr.png" alt="Low-resolution concert frame">
-            <img src="static/media/example_concert_sr.png" alt="High-resolution concert frame">
+            <div class="slider-after">
+              <img src="static/media/example_concert_sr.png" alt="High-resolution concert frame">
+            </div>
+            <div class="slider-divider" aria-hidden="true"></div>
+            <input type="range" min="0" max="100" value="50" aria-label="Compare LR and GT concert frame">
+            <span class="slider-label left">LR</span>
+            <span class="slider-label right">GT</span>
           </figure>
           <div class="card-copy">
             <h3>Real mobile video degradation</h3>
@@ -208,9 +214,15 @@
         </article>
 
         <article class="comparison-card">
-          <figure class="stacked-media">
+          <figure class="image-slider" data-image-slider style="--split: 50%;">
             <img src="static/media/example_waterfall_lr.png" alt="Low-resolution waterfall frame">
-            <img src="static/media/example_waterfall_ref.png" alt="Reference waterfall frame">
+            <div class="slider-after">
+              <img src="static/media/example_waterfall_ref.png" alt="Reference waterfall frame">
+            </div>
+            <div class="slider-divider" aria-hidden="true"></div>
+            <input type="range" min="0" max="100" value="50" aria-label="Compare LR and GT waterfall frame">
+            <span class="slider-label left">LR</span>
+            <span class="slider-label right">GT</span>
           </figure>
           <div class="card-copy">
             <h3>High-frequency motion texture</h3>
@@ -275,6 +287,6 @@
   <footer class="site-footer">
     <p>FocusVSR · AIAA3201 Computer Vision Project · Video Super-Resolution</p>
   </footer>
-  <script src="static/js/main.js"></script>
+  <script src="static/js/main.js?v=slider-hero-restore"></script>
 </body>
 </html>
