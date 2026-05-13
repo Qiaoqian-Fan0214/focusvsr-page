@@ -66,7 +66,7 @@ main { min-height: 100vh; }
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  min-height: calc(82vh - 64px);
+  min-height: calc(94vh - 64px);
   display: flex;
   align-items: flex-end;
   padding: min(8vw, 104px);
@@ -85,31 +85,32 @@ main { min-height: 100vh; }
 .hero::before {
   z-index: -1;
   background:
-    linear-gradient(90deg, rgba(5, 9, 12, 0.78), rgba(5, 9, 12, 0.48) 48%, rgba(5, 9, 12, 0.16)),
-    linear-gradient(180deg, rgba(5, 9, 12, 0.04), rgba(5, 9, 12, 0.64));
+    linear-gradient(90deg, rgba(5, 9, 12, 0.7), rgba(5, 9, 12, 0.38) 48%, rgba(5, 9, 12, 0.08)),
+    linear-gradient(180deg, rgba(5, 9, 12, 0), rgba(5, 9, 12, 0.52));
 }
 
 .hero::after {
   z-index: -2;
   background:
-    radial-gradient(circle at 72% 20%, rgba(255, 255, 255, 0.08), transparent 34%),
-    rgba(8, 13, 17, 0.08);
+    radial-gradient(circle at 72% 20%, rgba(255, 255, 255, 0.06), transparent 34%),
+    rgba(8, 13, 17, 0.03);
 }
 
 .hero-video {
   position: absolute;
-  inset: -28px;
+  inset: -8px;
   z-index: -3;
-  width: calc(100% + 56px);
-  height: calc(100% + 56px);
+  width: calc(100% + 16px);
+  height: calc(100% + 16px);
   object-fit: cover;
-  filter: blur(3px) saturate(1.12);
-  transform: scale(1.025);
+  filter: blur(0.5px) saturate(1.1) contrast(1.02);
+  transform: scale(1.006);
 }
 
 .hero-copy {
   position: relative;
   max-width: 1000px;
+  text-shadow: 0 2px 22px rgba(0, 0, 0, 0.58);
 }
 
 .eyebrow,
@@ -593,9 +594,8 @@ tr:last-child td { border-bottom: 0; }
   }
 
   .hero {
-    min-height: 640px;
+    min-height: 760px;
     padding: 42px 20px;
-    background-position: 56% center;
   }
 
   h1 {
