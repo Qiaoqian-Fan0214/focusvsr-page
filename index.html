@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>FocusVSR</title>
-  <link rel="stylesheet" href="static/css/style.css?v=hero-40s">
+  <link rel="stylesheet" href="static/css/style.css?v=video-testbed-4">
 </head>
 <body>
   <header class="site-header">
@@ -21,7 +21,7 @@
   <main>
     <section class="hero" id="top">
       <video class="hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
-        <source src="static/media/videos/hero_show1_loop.mp4?v=hero-40s" type="video/mp4">
+        <source src="static/media/videos/hero_show1_loop.mp4?v=video-testbed-4" type="video/mp4">
       </video>
       <div class="hero-copy">
         <p class="eyebrow">AIAA3201 Video Super-Resolution Project</p>
@@ -43,7 +43,7 @@
       </div>
       <div class="video-note">
         <p>
-          These two clips are treated as GT references for the live demo. The LR videos below are generated from the GT clips using a 4x spatial downsampling pipeline, then displayed at the same size so the loss of texture is easy to inspect.
+          These four clips are treated as GT references for the live demo. The LR videos below are generated from the GT clips using a 4x spatial downsampling pipeline, then displayed at the same size so the loss of texture is easy to inspect.
         </p>
         <p>
           Future super-resolution outputs can be dropped into the reserved file slots without redesigning this page.
@@ -106,6 +106,64 @@
             <div class="sr-slot" data-video-slot data-title="BasicVSR" data-video-src="static/media/videos/show2_basicvsr.mp4">BasicVSR result pending</div>
             <div class="sr-slot" data-video-slot data-title="BasicVSR++" data-video-src="static/media/videos/show2_basicvsrpp.mp4">BasicVSR++ result pending</div>
             <div class="sr-slot" data-video-slot data-title="FocusVSR" data-video-src="static/media/videos/show2_focusvsr.mp4">FocusVSR result pending</div>
+          </div>
+        </article>
+
+        <article class="video-case" data-sync-group="show3">
+          <div class="video-case-head">
+            <div>
+              <p class="case-label">Show 3</p>
+              <h3>Additional GT clip A</h3>
+            </div>
+            <span>GT 720p web proxy · LR generated at 1/4 scale and upsampled</span>
+          </div>
+          <div class="video-compare">
+            <figure>
+              <video controls muted playsinline preload="metadata" poster="static/media/videos/show3_poster.jpg" data-sync-video>
+                <source src="static/media/videos/show3_gt.mp4" type="video/mp4">
+              </video>
+              <figcaption>GT reference</figcaption>
+            </figure>
+            <figure>
+              <video controls muted playsinline preload="metadata" poster="static/media/videos/show3_poster.jpg" data-sync-video>
+                <source src="static/media/videos/show3_lr_x4.mp4" type="video/mp4">
+              </video>
+              <figcaption>4x LR input, upsampled</figcaption>
+            </figure>
+          </div>
+          <div class="sr-slots">
+            <div class="sr-slot" data-video-slot data-title="BasicVSR" data-video-src="static/media/videos/show3_basicvsr.mp4">BasicVSR result pending</div>
+            <div class="sr-slot" data-video-slot data-title="BasicVSR++" data-video-src="static/media/videos/show3_basicvsrpp.mp4">BasicVSR++ result pending</div>
+            <div class="sr-slot" data-video-slot data-title="FocusVSR" data-video-src="static/media/videos/show3_focusvsr.mp4">FocusVSR result pending</div>
+          </div>
+        </article>
+
+        <article class="video-case" data-sync-group="show4">
+          <div class="video-case-head">
+            <div>
+              <p class="case-label">Show 4</p>
+              <h3>Additional GT clip B</h3>
+            </div>
+            <span>GT 720p web proxy · LR generated at 1/4 scale and upsampled</span>
+          </div>
+          <div class="video-compare">
+            <figure>
+              <video controls muted playsinline preload="metadata" poster="static/media/videos/show4_poster.jpg" data-sync-video>
+                <source src="static/media/videos/show4_gt.mp4" type="video/mp4">
+              </video>
+              <figcaption>GT reference</figcaption>
+            </figure>
+            <figure>
+              <video controls muted playsinline preload="metadata" poster="static/media/videos/show4_poster.jpg" data-sync-video>
+                <source src="static/media/videos/show4_lr_x4.mp4" type="video/mp4">
+              </video>
+              <figcaption>4x LR input, upsampled</figcaption>
+            </figure>
+          </div>
+          <div class="sr-slots">
+            <div class="sr-slot" data-video-slot data-title="BasicVSR" data-video-src="static/media/videos/show4_basicvsr.mp4">BasicVSR result pending</div>
+            <div class="sr-slot" data-video-slot data-title="BasicVSR++" data-video-src="static/media/videos/show4_basicvsrpp.mp4">BasicVSR++ result pending</div>
+            <div class="sr-slot" data-video-slot data-title="FocusVSR" data-video-src="static/media/videos/show4_focusvsr.mp4">FocusVSR result pending</div>
           </div>
         </article>
       </div>
@@ -287,6 +345,6 @@
   <footer class="site-footer">
     <p>FocusVSR · AIAA3201 Computer Vision Project · Video Super-Resolution</p>
   </footer>
-  <script src="static/js/main.js?v=hero-40s"></script>
+  <script src="static/js/main.js?v=video-testbed-4"></script>
 </body>
 </html>
