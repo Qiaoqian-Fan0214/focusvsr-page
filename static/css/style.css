@@ -85,15 +85,15 @@ main { min-height: 100vh; }
 .hero::before {
   z-index: -1;
   background:
-    linear-gradient(90deg, rgba(5, 9, 12, 0.88), rgba(5, 9, 12, 0.58) 48%, rgba(5, 9, 12, 0.25)),
-    linear-gradient(180deg, rgba(5, 9, 12, 0.08), rgba(5, 9, 12, 0.78));
+    linear-gradient(90deg, rgba(5, 9, 12, 0.78), rgba(5, 9, 12, 0.48) 48%, rgba(5, 9, 12, 0.16)),
+    linear-gradient(180deg, rgba(5, 9, 12, 0.04), rgba(5, 9, 12, 0.64));
 }
 
 .hero::after {
   z-index: -2;
   background:
-    radial-gradient(circle at 72% 20%, rgba(255, 255, 255, 0.12), transparent 34%),
-    rgba(8, 13, 17, 0.16);
+    radial-gradient(circle at 72% 20%, rgba(255, 255, 255, 0.08), transparent 34%),
+    rgba(8, 13, 17, 0.08);
 }
 
 .hero-video {
@@ -103,8 +103,8 @@ main { min-height: 100vh; }
   width: calc(100% + 56px);
   height: calc(100% + 56px);
   object-fit: cover;
-  filter: blur(8px) saturate(1.18);
-  transform: scale(1.05);
+  filter: blur(3px) saturate(1.12);
+  transform: scale(1.025);
 }
 
 .hero-copy {
