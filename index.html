@@ -7,24 +7,195 @@
   <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body>
+  <header class="site-header">
+    <a class="brand" href="#top">FocusVSR</a>
+    <nav aria-label="Project sections">
+      <a href="#method">Method</a>
+      <a href="#results">Results</a>
+      <a href="#experiments">Experiments</a>
+      <a href="#roadmap">Roadmap</a>
+    </nav>
+  </header>
+
   <main>
-    <section class="hero">
-      <div>
-        <p class="eyebrow">AIAA3201 Video Super-Resolution</p>
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow">AIAA3201 Video Super-Resolution Project</p>
         <h1>FocusVSR</h1>
         <p class="tagline">Uncertainty-aware selective refinement for 4x video super-resolution</p>
+        <div class="hero-actions" aria-label="Project highlights">
+          <span>4x VSR</span>
+          <span>BasicVSR++ backbone</span>
+          <span>Uncertainty mask</span>
+          <span>Selective refinement</span>
+        </div>
       </div>
     </section>
-    <section class="band">
-      <h2>Benchmark</h2>
-      <p class="missing">Missing table: runs/tables/table1_vimeo_900_50_50.csv</p>
+
+    <section class="section intro">
+      <div class="section-heading">
+        <p class="kicker">Project Idea</p>
+        <h2>Repair only where the video is uncertain.</h2>
+      </div>
+      <div class="intro-grid">
+        <p>
+          Video super-resolution is not uniformly difficult across a frame. Large structural regions can be reconstructed reliably by a strong recurrent model, while specular highlights, text, water, screens, and fast motion often remain ambiguous. FocusVSR treats that ambiguity as a routing signal instead of applying the same refinement everywhere.
+        </p>
+        <p>
+          The current prototype keeps BasicVSR++ as the stable reconstruction path and adds a conservative refinement layer for high-frequency regions. The goal is to improve local perceptual detail without sacrificing the temporal stability and distortion metrics that make BasicVSR++ a strong baseline.
+        </p>
+      </div>
     </section>
-    <section class="band muted">
-      <h2>Selective Refinement</h2>
-      <p>FocusVSR keeps BasicVSR++ in reliable structural regions and activates generative refinement in uncertain high-frequency regions. On paired Vimeo clips, BasicVSR++ may remain strongest in PSNR/SSIM; FocusVSR is reported as a conservative, interpretable refinement layer.</p>
-      <p class="missing">Missing table: runs/tables/table2_focusvsr_ablation.csv</p>
+
+    <section class="section tinted" id="method">
+      <div class="section-heading compact">
+        <p class="kicker">Method</p>
+        <h2>Uncertainty-aware selective refinement pipeline</h2>
+      </div>
+      <div class="pipeline" aria-label="FocusVSR pipeline">
+        <article>
+          <span class="step">01</span>
+          <h3>Low-resolution clip</h3>
+          <p>Input frames are degraded to the target 4x VSR setting and processed as a temporal sequence.</p>
+        </article>
+        <article>
+          <span class="step">02</span>
+          <h3>BasicVSR++ backbone</h3>
+          <p>Bidirectional propagation recovers a stable full-frame reconstruction and preserves global structure.</p>
+        </article>
+        <article>
+          <span class="step">03</span>
+          <h3>Focus map</h3>
+          <p>Residual cues, local detail energy, and temporal disagreement highlight regions that are likely under-restored.</p>
+        </article>
+        <article>
+          <span class="step">04</span>
+          <h3>Selective refinement</h3>
+          <p>The refinement branch is applied only to uncertain high-frequency areas, then blended back into the backbone output.</p>
+        </article>
+      </div>
+      <div class="method-split">
+        <div>
+          <h3>Reliable regions</h3>
+          <p>Flat backgrounds, rigid edges, and well-aligned structures stay close to the BasicVSR++ output to protect PSNR, SSIM, and temporal smoothness.</p>
+        </div>
+        <div>
+          <h3>Uncertain regions</h3>
+          <p>Text, lighting, crowd texture, water spray, and screen content receive more aggressive local refinement where perceptual errors are easiest to notice.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="results">
+      <div class="section-heading">
+        <p class="kicker">Qualitative Results</p>
+        <h2>Stress cases from our current experiments</h2>
+      </div>
+      <div class="comparison-grid">
+        <article class="comparison-card wide">
+          <div class="image-row four">
+            <figure>
+              <img src="static/media/example_stage_lr.png" alt="Low-resolution stage frame">
+              <figcaption>LR input</figcaption>
+            </figure>
+            <figure>
+              <img src="static/media/example_stage_basicvsr.png" alt="BasicVSR++ stage reconstruction">
+              <figcaption>BasicVSR++</figcaption>
+            </figure>
+            <figure>
+              <img src="static/media/example_stage_focusvsr.png" alt="FocusVSR stage reconstruction">
+              <figcaption>FocusVSR</figcaption>
+            </figure>
+            <figure>
+              <img src="static/media/example_stage_ref.png" alt="Reference stage frame">
+              <figcaption>Reference</figcaption>
+            </figure>
+          </div>
+          <div class="card-copy">
+            <h3>Concert scene: bright screens and dense crowd texture</h3>
+            <p>The stage frame contains saturated light, thin screen boundaries, and repeated audience details. These are exactly the regions where a focus map can prevent full-frame over-processing and concentrate refinement where ambiguity is visible.</p>
+          </div>
+        </article>
+
+        <article class="comparison-card">
+          <figure class="stacked-media">
+            <img src="static/media/example_concert_lr.png" alt="Low-resolution concert frame">
+            <img src="static/media/example_concert_sr.png" alt="High-resolution concert frame">
+          </figure>
+          <div class="card-copy">
+            <h3>Real mobile video degradation</h3>
+            <p>Handheld footage introduces glare, haze, and compression artifacts. The page keeps this sample because it reflects the kind of practical video users actually want to enhance.</p>
+          </div>
+        </article>
+
+        <article class="comparison-card">
+          <figure class="stacked-media">
+            <img src="static/media/example_waterfall_lr.png" alt="Low-resolution waterfall frame">
+            <img src="static/media/example_waterfall_ref.png" alt="Reference waterfall frame">
+          </figure>
+          <div class="card-copy">
+            <h3>High-frequency motion texture</h3>
+            <p>Water and spray are difficult for pixel-aligned losses because many plausible details can match the same LR observation. This motivates reporting perceptual and temporal metrics alongside PSNR and SSIM.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section tinted" id="experiments">
+      <div class="section-heading">
+        <p class="kicker">Experiment Design</p>
+        <h2>What we evaluate and why</h2>
+      </div>
+      <div class="experiment-grid">
+        <article>
+          <h3>Datasets</h3>
+          <p>Vimeo-style paired clips for controlled 4x evaluation, plus REDS and real mobile samples for motion, lighting, and compression stress tests.</p>
+        </article>
+        <article>
+          <h3>Baselines</h3>
+          <p>Bicubic interpolation, BasicVSR, and BasicVSR++ define the distortion-oriented reference points for the FocusVSR refinement layer.</p>
+        </article>
+        <article>
+          <h3>Metrics</h3>
+          <p>PSNR and SSIM track fidelity; LPIPS and temporal consistency checks help reveal whether local refinement creates more believable detail.</p>
+        </article>
+        <article>
+          <h3>Ablations</h3>
+          <p>Threshold strength, focus-map source, blend ratio, and refinement branch depth show how selective processing changes quality and stability.</p>
+        </article>
+      </div>
+      <div class="table-section">
+        <h3>Benchmark Snapshot</h3>
+        <div class="pending-panel"><div><strong>Benchmark table</strong><p>Final CSV results are pending. The page currently reports the experiment design, qualitative samples, and evaluation protocol while the quantitative run is being finalized.</p></div><span class="status-pill">In progress</span></div>
+      </div>
+      <div class="table-section">
+        <h3>Selective Refinement Ablation</h3>
+        <div class="pending-panel"><div><strong>Ablation table</strong><p>Final CSV results are pending. The page currently reports the experiment design, qualitative samples, and evaluation protocol while the quantitative run is being finalized.</p></div><span class="status-pill">In progress</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="roadmap">
+      <div class="section-heading">
+        <p class="kicker">Current Takeaway</p>
+        <h2>A conservative layer, not a replacement for the backbone.</h2>
+      </div>
+      <div class="takeaway-grid">
+        <p>
+          Our working hypothesis is that BasicVSR++ remains the most reliable global reconstruction path for PSNR and SSIM. FocusVSR is designed as an interpretable add-on: it identifies where the baseline is least confident and spends extra modeling capacity there.
+        </p>
+        <ul class="roadmap-list">
+          <li>Finalize quantitative tables for Vimeo paired clips.</li>
+          <li>Add visualized focus masks for the representative examples.</li>
+          <li>Compare full-frame refinement against selective refinement.</li>
+          <li>Measure temporal flicker after local detail enhancement.</li>
+        </ul>
+      </div>
     </section>
   </main>
+
+  <footer class="site-footer">
+    <p>FocusVSR · AIAA3201 Computer Vision Project · Video Super-Resolution</p>
+  </footer>
   <script src="static/js/main.js"></script>
 </body>
 </html>
