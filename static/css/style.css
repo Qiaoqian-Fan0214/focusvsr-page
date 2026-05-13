@@ -70,7 +70,7 @@ main { min-height: 100vh; }
   display: flex;
   align-items: flex-end;
   padding: min(8vw, 104px);
-  background: #11181f url("../media/videos/show1_poster.jpg") center / cover no-repeat;
+  background: #05090c;
   color: #fff;
 }
 
@@ -91,7 +91,9 @@ main { min-height: 100vh; }
 
 .hero::after {
   z-index: -2;
-  background: rgba(8, 13, 17, 0.2);
+  background:
+    radial-gradient(circle at 72% 20%, rgba(255, 255, 255, 0.12), transparent 34%),
+    rgba(8, 13, 17, 0.16);
 }
 
 .hero-video {
@@ -101,8 +103,8 @@ main { min-height: 100vh; }
   width: calc(100% + 56px);
   height: calc(100% + 56px);
   object-fit: cover;
-  filter: blur(10px) saturate(1.16);
-  transform: scale(1.04);
+  filter: blur(8px) saturate(1.18);
+  transform: scale(1.05);
 }
 
 .hero-copy {
