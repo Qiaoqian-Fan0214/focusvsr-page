@@ -222,6 +222,16 @@ p {
   gap: 30px;
 }
 
+.takeaway-grid {
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
+  text-align: center;
+}
+
+.takeaway-grid p {
+  max-width: 980px;
+}
+
 .video-note {
   margin-bottom: 24px;
 }
