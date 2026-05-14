@@ -46,13 +46,6 @@ document.querySelectorAll("[data-video-slot]").forEach(async (slot) => {
   const src = slot.dataset.videoSrc;
   if (!src) return;
 
-  try {
-    const response = await fetch(src, { method: "HEAD", cache: "no-store" });
-    if (!response.ok) return;
-  } catch {
-    return;
-  }
-
   const title = slot.dataset.title || "SR result";
   slot.classList.add("is-ready");
   slot.innerHTML = `

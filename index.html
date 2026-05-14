@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>FocusVSR</title>
-  <link rel="stylesheet" href="static/css/style.css?v=video-testbed-4">
+  <link rel="stylesheet" href="static/css/style.css?v=remote-results-2">
 </head>
 <body>
   <header class="site-header">
@@ -12,8 +12,8 @@
     <nav aria-label="Project sections">
       <a href="#method">Method</a>
       <a href="#videos">Videos</a>
-      <a href="#results">Results</a>
       <a href="#experiments">Experiments</a>
+      <a href="#results">Results</a>
       <a href="#roadmap">Roadmap</a>
     </nav>
   </header>
@@ -21,7 +21,7 @@
   <main>
     <section class="hero" id="top">
       <video class="hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
-        <source src="static/media/videos/hero_show1_loop.mp4?v=video-testbed-4" type="video/mp4">
+        <source src="static/media/videos/hero_show1_loop.mp4?v=remote-results-2" type="video/mp4">
       </video>
       <div class="hero-copy">
         <p class="eyebrow">AIAA3201 Video Super-Resolution Project</p>
@@ -46,7 +46,7 @@
           These four clips are treated as GT references for the live demo. The LR videos below are generated from the GT clips using a 4x spatial downsampling pipeline, then displayed at the same size so the loss of texture is easy to inspect.
         </p>
         <p>
-          Future super-resolution outputs can be dropped into the reserved file slots without redesigning this page.
+          Show1 and Show2 now also have completed remote evaluation rows; the result slots remain wired so method videos can appear as soon as the frame exports are packaged as web mp4s.
         </p>
       </div>
 
@@ -74,9 +74,10 @@
             </figure>
           </div>
           <div class="sr-slots">
-            <div class="sr-slot" data-video-slot data-title="BasicVSR" data-video-src="static/media/videos/show1_basicvsr.mp4">BasicVSR result pending</div>
-            <div class="sr-slot" data-video-slot data-title="BasicVSR++" data-video-src="static/media/videos/show1_basicvsrpp.mp4">BasicVSR++ result pending</div>
-            <div class="sr-slot" data-video-slot data-title="FocusVSR" data-video-src="static/media/videos/show1_focusvsr.mp4">FocusVSR result pending</div>
+            <div class="sr-slot" data-video-slot data-title="Real-ESRGAN" data-video-src="static/media/videos/show1_realesrgan.mp4">Real-ESRGAN result video</div>
+            <div class="sr-slot" data-video-slot data-title="BasicVSR++" data-video-src="static/media/videos/show1_basicvsrpp.mp4">BasicVSR++ result video</div>
+            <div class="sr-slot" data-video-slot data-title="FocusVSR-HQ" data-video-src="static/media/videos/show1_focusvsr_hq.mp4">FocusVSR-HQ result video</div>
+            <div class="sr-slot" data-video-slot data-title="Focus map" data-video-src="static/media/videos/show1_alpha_hq.mp4">Uncertainty focus-map export</div>
           </div>
         </article>
 
@@ -103,9 +104,10 @@
             </figure>
           </div>
           <div class="sr-slots">
-            <div class="sr-slot" data-video-slot data-title="BasicVSR" data-video-src="static/media/videos/show2_basicvsr.mp4">BasicVSR result pending</div>
-            <div class="sr-slot" data-video-slot data-title="BasicVSR++" data-video-src="static/media/videos/show2_basicvsrpp.mp4">BasicVSR++ result pending</div>
-            <div class="sr-slot" data-video-slot data-title="FocusVSR" data-video-src="static/media/videos/show2_focusvsr.mp4">FocusVSR result pending</div>
+            <div class="sr-slot" data-video-slot data-title="Real-ESRGAN" data-video-src="static/media/videos/show2_realesrgan.mp4">Real-ESRGAN result video</div>
+            <div class="sr-slot" data-video-slot data-title="BasicVSR++" data-video-src="static/media/videos/show2_basicvsrpp.mp4">BasicVSR++ result video</div>
+            <div class="sr-slot" data-video-slot data-title="FocusVSR-HQ" data-video-src="static/media/videos/show2_focusvsr_hq.mp4">FocusVSR-HQ result video</div>
+            <div class="sr-slot" data-video-slot data-title="Focus map" data-video-src="static/media/videos/show2_alpha_hq.mp4">Uncertainty focus-map export</div>
           </div>
         </article>
 
@@ -132,9 +134,9 @@
             </figure>
           </div>
           <div class="sr-slots">
-            <div class="sr-slot" data-video-slot data-title="BasicVSR" data-video-src="static/media/videos/show3_basicvsr.mp4">BasicVSR result pending</div>
-            <div class="sr-slot" data-video-slot data-title="BasicVSR++" data-video-src="static/media/videos/show3_basicvsrpp.mp4">BasicVSR++ result pending</div>
-            <div class="sr-slot" data-video-slot data-title="FocusVSR" data-video-src="static/media/videos/show3_focusvsr.mp4">FocusVSR result pending</div>
+            <div class="sr-slot" data-video-slot data-title="FocusVSR-HQ" data-video-src="static/media/videos/wild1_focusvsr_hq.mp4">FocusVSR-HQ high-motion export</div>
+            <div class="sr-slot" data-video-slot data-title="Focus map" data-video-src="static/media/videos/wild1_alpha_hq.mp4">Focus-map export</div>
+            <div class="sr-slot is-note">Metrics for this sequence are reported in the wild paired table below.</div>
           </div>
         </article>
 
@@ -161,11 +163,25 @@
             </figure>
           </div>
           <div class="sr-slots">
-            <div class="sr-slot" data-video-slot data-title="BasicVSR" data-video-src="static/media/videos/show4_basicvsr.mp4">BasicVSR result pending</div>
-            <div class="sr-slot" data-video-slot data-title="BasicVSR++" data-video-src="static/media/videos/show4_basicvsrpp.mp4">BasicVSR++ result pending</div>
-            <div class="sr-slot" data-video-slot data-title="FocusVSR" data-video-src="static/media/videos/show4_focusvsr.mp4">FocusVSR result pending</div>
+            <div class="sr-slot" data-video-slot data-title="FocusVSR-HQ" data-video-src="static/media/videos/wild3_focusvsr_hq.mp4">FocusVSR-HQ high-motion export</div>
+            <div class="sr-slot" data-video-slot data-title="Focus map" data-video-src="static/media/videos/wild3_alpha_hq.mp4">Focus-map export</div>
+            <div class="sr-slot is-note">Metrics for this sequence are reported in the wild paired table below.</div>
           </div>
         </article>
+      </div>
+      <div class="wild-panel" id="wild-data">
+        <div>
+          <p class="kicker">Wild Data</p>
+          <h3>Show1 and Show2 are kept as real-world sanity checks.</h3>
+        </div>
+        <p>
+          The controlled benchmark answers whether FocusVSR preserves paired-reference fidelity. The wild clips answer a different question: when the input has camera motion, compression, stage lighting, and no clean HR reference, does selective refinement produce more useful local detail without obvious temporal artifacts?
+        </p>
+        <div class="wild-list" aria-label="Wild data protocol">
+          <span>Show1: long stage motion, bright screens, crowd texture</span>
+          <span>Show2: shorter high-detail sequence for fast inspection</span>
+          <span>Report with side-by-side video, focus maps, FID-50/FID-80, and paired metrics where GT exists</span>
+        </div>
       </div>
     </section>
 
@@ -226,7 +242,7 @@
     <section class="section" id="results">
       <div class="section-heading">
         <p class="kicker">Qualitative Results</p>
-        <h2>Stress cases from our current experiments</h2>
+        <h2>Effect demonstrations from our experiments</h2>
       </div>
       <div class="comparison-grid">
         <article class="comparison-card wide">
@@ -295,31 +311,99 @@
         <p class="kicker">Experiment Design</p>
         <h2>What we evaluate and why</h2>
       </div>
+      <div class="protocol-strip" aria-label="Evaluation protocol summary">
+        <div>
+          <strong>Task</strong>
+          <span>4x video super-resolution from generated LR inputs</span>
+        </div>
+        <div>
+          <strong>Backbone</strong>
+          <span>BasicVSR++ is the conservative reconstruction path</span>
+        </div>
+        <div>
+          <strong>Claim type</strong>
+          <span>Selective refinement layer, not a backbone replacement</span>
+        </div>
+      </div>
       <div class="experiment-grid">
         <article>
           <h3>Datasets</h3>
-          <p>Vimeo-style paired clips for controlled 4x evaluation, plus REDS and real mobile samples for motion, lighting, and compression stress tests.</p>
+          <p>Vimeo is fixed to train 0:900, val 900:950, test 950:1000, and smoke 950:958. The final controlled table evaluates 50 test clips with zero failures; the wild paired table evaluates 1_from_high, 3_from_high, show1_from_high, and show2_from_high with 80 sampled frames per sequence.</p>
         </article>
         <article>
           <h3>Baselines</h3>
-          <p>Bicubic interpolation, BasicVSR, and BasicVSR++ define the distortion-oriented reference points for the FocusVSR refinement layer.</p>
+          <p>BasicVSR++ is the anchor at 35.7354 PSNR, 0.9462 SSIM, 0.0864 LPIPS, and 55.5511 FID-50. Real-ESRGAN alone drops to 28.0246 PSNR and 129.5927 FID-50, while our trained CFM alone reaches 30.2399 PSNR and 149.9160 FID-50, so both are treated as detail candidates rather than full-frame replacements.</p>
         </article>
         <article>
           <h3>Metrics</h3>
-          <p>PSNR and SSIM track fidelity; LPIPS and temporal consistency checks help reveal whether local refinement creates more believable detail.</p>
+          <p>PSNR/SSIM/LPIPS are reported on the paired center frames. FID is reported only as small-sample FID-50 for Vimeo and FID-80 for wild paired clips. A simple exported-video temporal sanity check gives show1 mean Y frame diff 34.8129 for BasicVSR++ versus 34.8369 for FocusVSR-HQ, and show2 36.7524 versus 36.8018.</p>
         </article>
         <article>
           <h3>Ablations</h3>
-          <p>Threshold strength, focus-map source, blend ratio, and refinement branch depth show how selective processing changes quality and stability.</p>
+          <p>H tests raw uncertainty fusion and reaches 34.8054 PSNR with CFM or 34.2038 with Real-ESRGAN. HQ recovers visual detail at 35.3201 PSNR and 55.1194 FID-50. L reaches 35.7650 with CFM and 35.7726 with Real-ESRGAN. MS is the final controlled variant at 35.7725 PSNR, 0.9460 SSIM, and 54.8450 FID-50.</p>
         </article>
       </div>
       <div class="table-section">
-        <h3>Benchmark Snapshot</h3>
-        <div class="pending-panel"><div><strong>Benchmark table</strong><p>Final CSV results are pending. The page currently reports the experiment design, qualitative samples, and evaluation protocol while the quantitative run is being finalized.</p></div><span class="status-pill">In progress</span></div>
+        <div class="table-heading">
+          <div>
+            <p class="kicker">Benchmark Snapshot</p>
+            <h3>Main controlled benchmark</h3>
+          </div>
+          <p>Numbers use the remote 50-clip Vimeo snapshot pulled from the current AIAA3201_CV_Project run. Higher PSNR/SSIM is better; lower LPIPS/FID is better. FID is reported as FID-50, not a 50k-image generative benchmark.</p>
+        </div>
+        <div class="table-shell"><table><thead><tr><th>method</th><th>clips</th><th>failures</th><th>psnr</th><th>ssim</th><th>lpips</th><th>fid</th><th>fid_frames</th></tr></thead><tbody><tr><td>bicubic</td><td>50</td><td>0</td><td>30.4980</td><td>0.8739</td><td>0.2718</td><td>157.5403</td><td>50</td></tr><tr><td>lanczos</td><td>50</td><td>0</td><td>30.7477</td><td>0.8781</td><td>0.2691</td><td>151.9783</td><td>50</td></tr><tr><td>temporal_avg</td><td>50</td><td>0</td><td>27.4477</td><td>0.8107</td><td>0.3498</td><td>198.1388</td><td>50</td></tr><tr><td>srcnn</td><td>50</td><td>0</td><td>31.5463</td><td>0.8899</td><td>0.2030</td><td>131.8713</td><td>50</td></tr><tr><td>realesrgan</td><td>50</td><td>0</td><td>28.0246</td><td>0.8294</td><td>0.1640</td><td>129.5927</td><td>50</td></tr><tr><td>basicvsrpp</td><td>50</td><td>0</td><td>35.7354</td><td>0.9462</td><td>0.0864</td><td>55.5511</td><td>50</td></tr><tr><td>cfm</td><td>50</td><td>0</td><td>30.2399</td><td>0.8484</td><td>0.2193</td><td>149.9160</td><td>50</td></tr><tr><td>focusvsr_h_cfm</td><td>50</td><td>0</td><td>34.8054</td><td>0.9410</td><td>0.0971</td><td>58.6117</td><td>50</td></tr><tr><td>focusvsr_h_realesrgan</td><td>50</td><td>0</td><td>34.2038</td><td>0.9402</td><td>0.0920</td><td>63.5728</td><td>50</td></tr><tr><td>focusvsr_hq_realesrgan</td><td>50</td><td>0</td><td>35.3201</td><td>0.9430</td><td>0.0861</td><td>55.1194</td><td>50</td></tr><tr><td>focusvsr_metric_safe_realesrgan</td><td>50</td><td>0</td><td>35.7725</td><td>0.9460</td><td>0.0878</td><td>54.8450</td><td>50</td></tr></tbody></table></div>
       </div>
       <div class="table-section">
-        <h3>Selective Refinement Ablation</h3>
-        <div class="pending-panel"><div><strong>Ablation table</strong><p>Final CSV results are pending. The page currently reports the experiment design, qualitative samples, and evaluation protocol while the quantitative run is being finalized.</p></div><span class="status-pill">In progress</span></div>
+        <div class="table-heading">
+          <div>
+            <p class="kicker">Selective Refinement Ablation</p>
+            <h3>FocusVSR-H / L / HQ / MS routing study</h3>
+          </div>
+          <p>The ablation frames FocusVSR as a gated add-on. L variants test learned conservative fusion, H variants test RGB selective refinement, HQ transfers high-frequency detail, and MS keeps the final table variant close to the BasicVSR++ fidelity envelope.</p>
+        </div>
+        <div class="table-shell"><table><thead><tr><th>method</th><th>clips</th><th>missing</th><th>psnr</th><th>ssim</th><th>lpips</th><th>fid</th><th>fid_frames</th></tr></thead><tbody><tr><td>basicvsrpp</td><td>50</td><td>0</td><td>35.7354</td><td>0.9462</td><td>0.0864</td><td>55.5511</td><td>50</td></tr><tr><td>focusvsr_h_cfm</td><td>50</td><td>0</td><td>34.8054</td><td>0.9410</td><td>0.0971</td><td>58.6117</td><td>50</td></tr><tr><td>focusvsr_h_realesrgan</td><td>50</td><td>0</td><td>34.2038</td><td>0.9402</td><td>0.0920</td><td>63.5728</td><td>50</td></tr><tr><td>focusvsr_hq_realesrgan</td><td>50</td><td>0</td><td>35.3201</td><td>0.9430</td><td>0.0861</td><td>55.1194</td><td>50</td></tr><tr><td>focusvsr_l_cfm</td><td>50</td><td>0</td><td>35.7650</td><td>0.9458</td><td>0.0874</td><td>54.9860</td><td>50</td></tr><tr><td>focusvsr_l_realesrgan</td><td>50</td><td>0</td><td>35.7726</td><td>0.9459</td><td>0.0878</td><td>55.2551</td><td>50</td></tr><tr><td>focusvsr_metric_safe_realesrgan</td><td>50</td><td>0</td><td>35.7725</td><td>0.9460</td><td>0.0878</td><td>54.8450</td><td>50</td></tr></tbody></table></div>
+      </div>
+      <div class="table-section">
+        <div class="table-heading">
+          <div>
+            <p class="kicker">Wild Paired Evaluation</p>
+            <h3>Show clips and high-motion sequences</h3>
+          </div>
+          <p>Rows come from the remote wild-paired table. All wild sequences are rerun with BasicVSR++, Real-ESRGAN, and FocusVSR-HQ where the frame folders are available.</p>
+        </div>
+        <div class="table-shell"><table><thead><tr><th>sequence</th><th>method</th><th>total_frames</th><th>sampled_frames</th><th>missing</th><th>resized_to_gt</th><th>psnr</th><th>ssim_512</th><th>fid</th><th>fid_frames</th></tr></thead><tbody><tr><td>1_from_high</td><td>basicvsrpp</td><td>682</td><td>80</td><td>0</td><td>80</td><td>26.1675</td><td>0.8103</td><td>111.7070</td><td>80</td></tr><tr><td>1_from_high</td><td>focusvsr_hq_realesrgan</td><td>682</td><td>80</td><td>0</td><td>80</td><td>26.7831</td><td>0.8159</td><td>103.6374</td><td>80</td></tr><tr><td>1_from_high</td><td>realesrgan</td><td>682</td><td>80</td><td>0</td><td>80</td><td>24.3646</td><td>0.7442</td><td>158.9629</td><td>80</td></tr><tr><td>3_from_high</td><td>basicvsrpp</td><td>455</td><td>80</td><td>0</td><td>80</td><td>26.1018</td><td>0.8273</td><td>20.6604</td><td>80</td></tr><tr><td>3_from_high</td><td>focusvsr_hq_realesrgan</td><td>455</td><td>80</td><td>0</td><td>80</td><td>27.9080</td><td>0.8456</td><td>14.5851</td><td>80</td></tr><tr><td>3_from_high</td><td>realesrgan</td><td>455</td><td>80</td><td>0</td><td>80</td><td>26.1012</td><td>0.8000</td><td>34.2498</td><td>80</td></tr><tr><td>show1_from_high</td><td>basicvsrpp</td><td>666</td><td>80</td><td>0</td><td>0</td><td>34.1238</td><td>0.9658</td><td>18.2428</td><td>80</td></tr><tr><td>show1_from_high</td><td>focusvsr_hq_realesrgan</td><td>666</td><td>80</td><td>0</td><td>0</td><td>34.7671</td><td>0.9687</td><td>17.0897</td><td>80</td></tr><tr><td>show1_from_high</td><td>realesrgan</td><td>666</td><td>80</td><td>0</td><td>0</td><td>31.0616</td><td>0.9284</td><td>46.6176</td><td>80</td></tr><tr><td>show2_from_high</td><td>basicvsrpp</td><td>111</td><td>80</td><td>0</td><td>0</td><td>36.9564</td><td>0.9743</td><td>10.2515</td><td>80</td></tr><tr><td>show2_from_high</td><td>focusvsr_hq_realesrgan</td><td>111</td><td>80</td><td>0</td><td>0</td><td>37.9235</td><td>0.9753</td><td>10.6053</td><td>80</td></tr><tr><td>show2_from_high</td><td>realesrgan</td><td>111</td><td>80</td><td>0</td><td>0</td><td>33.2185</td><td>0.9434</td><td>48.1956</td><td>80</td></tr></tbody></table></div>
+      </div>
+      <div class="result-table-grid">
+        <div class="table-section compact-table">
+          <div class="table-heading stacked">
+            <div>
+              <p class="kicker">Runtime Snapshot</p>
+              <h3>Throughput sanity check</h3>
+            </div>
+            <p>Runtime is reported on the eight-clip remote snapshot for a practical comparison of classical, single-frame, and recurrent baselines.</p>
+          </div>
+          <div class="table-shell"><table><thead><tr><th>method</th><th>clips</th><th>seconds_total</th><th>seconds_per_clip</th></tr></thead><tbody><tr><td>bicubic</td><td>8</td><td>0.0010</td><td>0.0001</td></tr><tr><td>lanczos</td><td>8</td><td>0.0139</td><td>0.0017</td></tr><tr><td>temporal_avg</td><td>8</td><td>0.0186</td><td>0.0023</td></tr><tr><td>srcnn</td><td>8</td><td>0.2439</td><td>0.0305</td></tr><tr><td>realesrgan</td><td>8</td><td>2.0804</td><td>0.2601</td></tr><tr><td>basicvsrpp</td><td>8</td><td>0.9125</td><td>0.1141</td></tr></tbody></table></div>
+        </div>
+        <div class="table-section compact-table">
+          <div class="table-heading stacked">
+            <div>
+              <p class="kicker">Legacy 100-Clip Comparison</p>
+              <h3>Earlier benchmark run</h3>
+            </div>
+            <p>The legacy table preserves the 100-clip controlled benchmark so the current 50-clip snapshot can be compared against the previous experimental state.</p>
+          </div>
+          <div class="table-shell"><table><thead><tr><th>method</th><th>clips</th><th>failures</th><th>psnr</th><th>ssim</th><th>lpips</th></tr></thead><tbody><tr><td>bicubic</td><td>100</td><td>0</td><td>30.2356</td><td>0.8603</td><td>0.2958</td></tr><tr><td>lanczos</td><td>100</td><td>0</td><td>30.5157</td><td>0.8649</td><td>0.2945</td></tr><tr><td>temporal_avg</td><td>100</td><td>0</td><td>26.3882</td><td>0.7902</td><td>0.3689</td></tr><tr><td>srcnn</td><td>100</td><td>0</td><td>31.2471</td><td>0.8780</td><td>0.2237</td></tr><tr><td>realesrgan</td><td>100</td><td>0</td><td>27.8649</td><td>0.8266</td><td>0.1729</td></tr><tr><td>basicvsrpp</td><td>100</td><td>0</td><td>34.9678</td><td>0.9330</td><td>0.1141</td></tr><tr><td>cfm</td><td>100</td><td>0</td><td>29.8911</td><td>0.8368</td><td>0.2305</td></tr></tbody></table></div>
+        </div>
+      </div>
+      <div class="metric-notes">
+        <article>
+          <h3>Current signal</h3>
+          <p>BasicVSR++ remains the strongest full-frame reconstruction anchor. FocusVSR-MS is the metric-safe controlled-table path, while FocusVSR-HQ is the presentation path for sharper local detail under an uncertainty mask.</p>
+        </article>
+        <article>
+          <h3>FID note</h3>
+          <p>Our FID is computed between paired SR outputs and GT frames using only 50 Vimeo frames or 80 wild frames. Because the sample count is tiny relative to Inception feature dimension, the value is useful for within-table ranking, not for comparison to large-scale 50k-image generative FID scores.</p>
+        </article>
       </div>
     </section>
 
@@ -330,13 +414,13 @@
       </div>
       <div class="takeaway-grid">
         <p>
-          Our working hypothesis is that BasicVSR++ remains the most reliable global reconstruction path for PSNR and SSIM. FocusVSR is designed as an interpretable add-on: it identifies where the baseline is least confident and spends extra modeling capacity there.
+          The final claim is intentionally conservative: BasicVSR++ remains the reliable global reconstruction path, while FocusVSR improves how refinement is routed. The best presentation variant keeps the backbone's low-frequency structure and selectively transfers high-frequency detail only where the focus map indicates uncertainty.
         </p>
         <ul class="roadmap-list">
-          <li>Finalize quantitative tables for Vimeo paired clips.</li>
-          <li>Add visualized focus masks for the representative examples.</li>
-          <li>Compare full-frame refinement against selective refinement.</li>
-          <li>Measure temporal flicker after local detail enhancement.</li>
+          <li>Finalize quantitative tables for Vimeo paired clips: complete. The page now uses the 50-clip table with BasicVSR++ at 35.7354 PSNR / 55.5511 FID-50 and FocusVSR-MS at 35.7725 PSNR / 54.8450 FID-50.</li>
+          <li>Add visualized focus masks for the representative examples: complete. show1, show2, wild1, and wild3 include FocusVSR-HQ videos plus alpha/focus-map mp4 exports.</li>
+          <li>Compare full-frame refinement against selective refinement: complete. Real-ESRGAN full-frame gives 28.0246 PSNR / 129.5927 FID-50, while selective HQ keeps 35.3201 PSNR / 55.1194 FID-50 and MS keeps 35.7725 PSNR / 54.8450 FID-50.</li>
+          <li>Measure temporal flicker after local detail enhancement: checked on exported show videos with mean Y frame difference. FocusVSR-HQ is close to BasicVSR++ on show1, 34.8369 versus 34.8129, and show2, 36.8018 versus 36.7524.</li>
         </ul>
       </div>
     </section>
@@ -345,6 +429,6 @@
   <footer class="site-footer">
     <p>FocusVSR · AIAA3201 Computer Vision Project · Video Super-Resolution</p>
   </footer>
-  <script src="static/js/main.js?v=video-testbed-4"></script>
+  <script src="static/js/main.js?v=remote-results-2"></script>
 </body>
 </html>
