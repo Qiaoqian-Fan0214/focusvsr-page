@@ -57,7 +57,7 @@ document.querySelectorAll("[data-video-slot]").forEach(async (slot) => {
   slot.classList.add("is-ready");
   slot.innerHTML = `
     <figure>
-      <video controls muted playsinline preload="metadata" data-sync-video>
+      <video controls muted playsinline preload="none" data-sync-video>
         <source src="${src}" type="video/mp4">
       </video>
       <figcaption>${title}</figcaption>
