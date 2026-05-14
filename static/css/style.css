@@ -386,6 +386,35 @@ p {
   content: "reported";
 }
 
+.sample-demo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.sample-demo-card {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.sample-demo-videos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  background: #dfe5e7;
+}
+
+.sample-demo-videos video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #11181f;
+}
+
 .pipeline {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -804,6 +833,7 @@ tbody tr:hover td {
   .video-note,
   .method-split,
   .comparison-grid,
+  .sample-demo-grid,
   .wild-panel,
   .table-heading,
   .result-table-grid,
@@ -860,11 +890,12 @@ tbody tr:hover td {
 
   .pipeline,
   .experiment-grid,
-  .image-row.four,
-  .video-compare,
-  .sr-slots,
-  .protocol-strip,
-  .pending-panel {
+    .image-row.four,
+    .video-compare,
+    .sample-demo-videos,
+    .sr-slots,
+    .protocol-strip,
+    .pending-panel {
     grid-template-columns: 1fr;
   }
 

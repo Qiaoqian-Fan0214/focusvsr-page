@@ -12,6 +12,7 @@
     <nav aria-label="Project sections">
       <a href="#method">Method</a>
       <a href="#videos">Videos</a>
+      <a href="#sample-demo">Sample Demo</a>
       <a href="#experiments">Experiments</a>
       <a href="#results">Results</a>
       <a href="#roadmap">Roadmap</a>
@@ -39,14 +40,14 @@
     <section class="section tinted" id="videos">
       <div class="section-heading">
         <p class="kicker">Video Testbed</p>
-        <h2>Ground-truth clips and generated 4x low-resolution inputs</h2>
+        <h2>35fps wild-video demonstrations</h2>
       </div>
       <div class="video-note">
         <p>
-          These four clips are treated as GT references for the live demo. The LR videos below are generated from the GT clips using a 4x spatial downsampling pipeline, then displayed at the same size so the loss of texture is easy to inspect.
+          Each source video is exported as a representative 35fps clip. The four panels are GT, generated 4x LR input, BasicVSR++ with the Vimeo90K-BI checkpoint, and our strongest presentation output from the trained risk-aware Laplacian FocusVSR path.
         </p>
         <p>
-          Show1 and Show2 now also have completed remote evaluation rows; the result slots remain wired so method videos can appear as soon as the frame exports are packaged as web mp4s.
+          Only BasicVSR++ and Ours are kept as SR outputs on the page; older Real-ESRGAN, alpha-map, and HQ residual exports are removed from the final media bundle.
         </p>
       </div>
 
@@ -55,9 +56,9 @@
           <div class="video-case-head">
             <div>
               <p class="case-label">Show 1</p>
-              <h3>Long real-motion GT clip</h3>
+              <h3>Stage motion and screen detail</h3>
             </div>
-            <span>GT 720p web proxy · LR generated at 1/4 scale and upsampled</span>
+            <span>35fps · GT / LR / BasicVSR++ / Ours</span>
           </div>
           <div class="video-compare">
             <figure>
@@ -68,16 +69,14 @@
             </figure>
             <figure>
               <video controls muted playsinline preload="metadata" poster="static/media/videos/show1_poster.jpg" data-sync-video>
-                <source src="static/media/videos/show1_lr_x4.mp4" type="video/mp4">
+                <source src="static/media/videos/show1_lr.mp4" type="video/mp4">
               </video>
               <figcaption>4x LR input, upsampled</figcaption>
             </figure>
           </div>
           <div class="sr-slots">
-            <div class="sr-slot" data-video-slot data-title="Real-ESRGAN" data-video-src="static/media/videos/show1_realesrgan.mp4">Real-ESRGAN result video</div>
             <div class="sr-slot" data-video-slot data-title="BasicVSR++" data-video-src="static/media/videos/show1_basicvsrpp.mp4">BasicVSR++ result video</div>
-            <div class="sr-slot" data-video-slot data-title="FocusVSR-HQ" data-video-src="static/media/videos/show1_focusvsr_hq.mp4">FocusVSR-HQ result video</div>
-            <div class="sr-slot" data-video-slot data-title="Focus map" data-video-src="static/media/videos/show1_alpha_hq.mp4">Uncertainty focus-map export</div>
+            <div class="sr-slot" data-video-slot data-title="Ours" data-video-src="static/media/videos/show1_ours.mp4">FocusVSR trained risk-lap result</div>
           </div>
         </article>
 
@@ -85,9 +84,9 @@
           <div class="video-case-head">
             <div>
               <p class="case-label">Show 2</p>
-              <h3>Short high-detail GT clip</h3>
+              <h3>High-detail handheld clip</h3>
             </div>
-            <span>GT 720p web proxy · LR generated at 1/4 scale and upsampled</span>
+            <span>35fps · GT / LR / BasicVSR++ / Ours</span>
           </div>
           <div class="video-compare">
             <figure>
@@ -98,91 +97,103 @@
             </figure>
             <figure>
               <video controls muted playsinline preload="metadata" poster="static/media/videos/show2_poster.jpg" data-sync-video>
-                <source src="static/media/videos/show2_lr_x4.mp4" type="video/mp4">
+                <source src="static/media/videos/show2_lr.mp4" type="video/mp4">
               </video>
               <figcaption>4x LR input, upsampled</figcaption>
             </figure>
           </div>
           <div class="sr-slots">
-            <div class="sr-slot" data-video-slot data-title="Real-ESRGAN" data-video-src="static/media/videos/show2_realesrgan.mp4">Real-ESRGAN result video</div>
             <div class="sr-slot" data-video-slot data-title="BasicVSR++" data-video-src="static/media/videos/show2_basicvsrpp.mp4">BasicVSR++ result video</div>
-            <div class="sr-slot" data-video-slot data-title="FocusVSR-HQ" data-video-src="static/media/videos/show2_focusvsr_hq.mp4">FocusVSR-HQ result video</div>
-            <div class="sr-slot" data-video-slot data-title="Focus map" data-video-src="static/media/videos/show2_alpha_hq.mp4">Uncertainty focus-map export</div>
+            <div class="sr-slot" data-video-slot data-title="Ours" data-video-src="static/media/videos/show2_ours.mp4">FocusVSR trained risk-lap result</div>
           </div>
         </article>
 
-        <article class="video-case" data-sync-group="show3">
+        <article class="video-case" data-sync-group="img0115">
           <div class="video-case-head">
             <div>
-              <p class="case-label">Show 3</p>
-              <h3>Additional GT clip A</h3>
+              <p class="case-label">IMG 0115</p>
+              <h3>Mobile wild clip A</h3>
             </div>
-            <span>GT 720p web proxy · LR generated at 1/4 scale and upsampled</span>
+            <span>35fps · GT / LR / BasicVSR++ / Ours</span>
           </div>
           <div class="video-compare">
             <figure>
-              <video controls muted playsinline preload="metadata" poster="static/media/videos/show3_poster.jpg" data-sync-video>
-                <source src="static/media/videos/show3_gt.mp4" type="video/mp4">
+              <video controls muted playsinline preload="metadata" poster="static/media/videos/img0115_poster.jpg" data-sync-video>
+                <source src="static/media/videos/img0115_gt.mp4" type="video/mp4">
               </video>
               <figcaption>GT reference</figcaption>
             </figure>
             <figure>
-              <video controls muted playsinline preload="metadata" poster="static/media/videos/show3_poster.jpg" data-sync-video>
-                <source src="static/media/videos/show3_lr_x4.mp4" type="video/mp4">
+              <video controls muted playsinline preload="metadata" poster="static/media/videos/img0115_poster.jpg" data-sync-video>
+                <source src="static/media/videos/img0115_lr.mp4" type="video/mp4">
               </video>
               <figcaption>4x LR input, upsampled</figcaption>
             </figure>
           </div>
           <div class="sr-slots">
-            <div class="sr-slot" data-video-slot data-title="FocusVSR-HQ" data-video-src="static/media/videos/wild1_focusvsr_hq.mp4">FocusVSR-HQ high-motion export</div>
-            <div class="sr-slot" data-video-slot data-title="Focus map" data-video-src="static/media/videos/wild1_alpha_hq.mp4">Focus-map export</div>
-            <div class="sr-slot is-note">Metrics for this sequence are reported in the wild paired table below.</div>
+            <div class="sr-slot" data-video-slot data-title="BasicVSR++" data-video-src="static/media/videos/img0115_basicvsrpp.mp4">BasicVSR++ result video</div>
+            <div class="sr-slot" data-video-slot data-title="Ours" data-video-src="static/media/videos/img0115_ours.mp4">FocusVSR trained risk-lap result</div>
           </div>
         </article>
 
-        <article class="video-case" data-sync-group="show4">
+        <article class="video-case" data-sync-group="img0117">
           <div class="video-case-head">
             <div>
-              <p class="case-label">Show 4</p>
-              <h3>Additional GT clip B</h3>
+              <p class="case-label">IMG 0117</p>
+              <h3>Mobile wild clip B</h3>
             </div>
-            <span>GT 720p web proxy · LR generated at 1/4 scale and upsampled</span>
+            <span>35fps · GT / LR / BasicVSR++ / Ours</span>
           </div>
           <div class="video-compare">
             <figure>
-              <video controls muted playsinline preload="metadata" poster="static/media/videos/show4_poster.jpg" data-sync-video>
-                <source src="static/media/videos/show4_gt.mp4" type="video/mp4">
+              <video controls muted playsinline preload="metadata" poster="static/media/videos/img0117_poster.jpg" data-sync-video>
+                <source src="static/media/videos/img0117_gt.mp4" type="video/mp4">
               </video>
               <figcaption>GT reference</figcaption>
             </figure>
             <figure>
-              <video controls muted playsinline preload="metadata" poster="static/media/videos/show4_poster.jpg" data-sync-video>
-                <source src="static/media/videos/show4_lr_x4.mp4" type="video/mp4">
+              <video controls muted playsinline preload="metadata" poster="static/media/videos/img0117_poster.jpg" data-sync-video>
+                <source src="static/media/videos/img0117_lr.mp4" type="video/mp4">
               </video>
               <figcaption>4x LR input, upsampled</figcaption>
             </figure>
           </div>
           <div class="sr-slots">
-            <div class="sr-slot" data-video-slot data-title="FocusVSR-HQ" data-video-src="static/media/videos/wild3_focusvsr_hq.mp4">FocusVSR-HQ high-motion export</div>
-            <div class="sr-slot" data-video-slot data-title="Focus map" data-video-src="static/media/videos/wild3_alpha_hq.mp4">Focus-map export</div>
-            <div class="sr-slot is-note">Metrics for this sequence are reported in the wild paired table below.</div>
+            <div class="sr-slot" data-video-slot data-title="BasicVSR++" data-video-src="static/media/videos/img0117_basicvsrpp.mp4">BasicVSR++ result video</div>
+            <div class="sr-slot" data-video-slot data-title="Ours" data-video-src="static/media/videos/img0117_ours.mp4">FocusVSR trained risk-lap result</div>
           </div>
         </article>
       </div>
       <div class="wild-panel" id="wild-data">
         <div>
           <p class="kicker">Wild Data</p>
-          <h3>Show1 and Show2 are kept as real-world sanity checks.</h3>
+          <h3>Only the final GT, LR, BasicVSR++, and Ours exports are kept.</h3>
         </div>
         <p>
-          The controlled benchmark answers whether FocusVSR preserves paired-reference fidelity. The wild clips answer a different question: when the input has camera motion, compression, stage lighting, and no clean HR reference, does selective refinement produce more useful local detail without obvious temporal artifacts?
+          The controlled benchmark answers whether FocusVSR preserves paired-reference fidelity. The wild clips are for presentation: they show whether risk-aware local detail transfer gives useful visual detail while keeping BasicVSR++ as the structural anchor.
         </p>
         <div class="wild-list" aria-label="Wild data protocol">
-          <span>Show1: long stage motion, bright screens, crowd texture</span>
-          <span>Show2: shorter high-detail sequence for fast inspection</span>
-          <span>Report with side-by-side video, focus maps, FID-50/FID-80, and paired metrics where GT exists</span>
+          <span>35fps exports for smooth playback</span>
+          <span>BasicVSR++ Vimeo90K-BI checkpoint</span>
+          <span>Ours: trained risk-aware Laplacian FocusVSR</span>
         </div>
       </div>
+    </section>
+
+    <section class="section" id="sample-demo">
+      <div class="section-heading">
+        <p class="kicker">Mandatory Demo</p>
+        <h2>REDS-sample and Vimeo-LR rendered demo videos</h2>
+      </div>
+      <div class="video-note">
+        <p>
+          The course handout asks for rendered top-down and egocentric videos. For our video super-resolution task, the top-down view is an overview panel containing LR input, BasicVSR++, Ours, and the local focus-detail map. The egocentric view is the full-frame output from our strongest trained risk-aware Laplacian FocusVSR path.
+        </p>
+        <p>
+          The full submission bundle is generated as <code>navigation results.zip</code> under <code>extensions/focusvsr/runs/sample_demo/</code>. The page shows representative clips from the same REDS-sample and Vimeo-LR rendering run.
+        </p>
+      </div>
+      <div class="sample-demo-grid"><article class="sample-demo-card" data-sync-group="sample-demo"><div class="video-case-head"><div><p class="case-label">REDS-sample</p><h3>002</h3></div><span>100 frames · 24.0 fps</span></div><div class="sample-demo-videos"><figure><video controls muted playsinline preload="metadata" data-sync-video><source src="static/media/sample_demo/REDS-sample_002_top_down.mp4" type="video/mp4"></video><figcaption>Top-down overview</figcaption></figure><figure><video controls muted playsinline preload="metadata" data-sync-video><source src="static/media/sample_demo/REDS-sample_002_egocentric.mp4" type="video/mp4"></video><figcaption>Egocentric ours</figcaption></figure></div></article><article class="sample-demo-card" data-sync-group="sample-demo"><div class="video-case-head"><div><p class="case-label">REDS-sample</p><h3>007</h3></div><span>100 frames · 24.0 fps</span></div><div class="sample-demo-videos"><figure><video controls muted playsinline preload="metadata" data-sync-video><source src="static/media/sample_demo/REDS-sample_007_top_down.mp4" type="video/mp4"></video><figcaption>Top-down overview</figcaption></figure><figure><video controls muted playsinline preload="metadata" data-sync-video><source src="static/media/sample_demo/REDS-sample_007_egocentric.mp4" type="video/mp4"></video><figcaption>Egocentric ours</figcaption></figure></div></article><article class="sample-demo-card" data-sync-group="sample-demo"><div class="video-case-head"><div><p class="case-label">vimeo-RL</p><h3>00018/0043</h3></div><span>7 frames · 7.0 fps</span></div><div class="sample-demo-videos"><figure><video controls muted playsinline preload="metadata" data-sync-video><source src="static/media/sample_demo/vimeo-RL_00018_0043_top_down.mp4" type="video/mp4"></video><figcaption>Top-down overview</figcaption></figure><figure><video controls muted playsinline preload="metadata" data-sync-video><source src="static/media/sample_demo/vimeo-RL_00018_0043_egocentric.mp4" type="video/mp4"></video><figcaption>Egocentric ours</figcaption></figure></div></article><article class="sample-demo-card" data-sync-group="sample-demo"><div class="video-case-head"><div><p class="case-label">vimeo-RL</p><h3>00018/0044</h3></div><span>7 frames · 7.0 fps</span></div><div class="sample-demo-videos"><figure><video controls muted playsinline preload="metadata" data-sync-video><source src="static/media/sample_demo/vimeo-RL_00018_0044_top_down.mp4" type="video/mp4"></video><figcaption>Top-down overview</figcaption></figure><figure><video controls muted playsinline preload="metadata" data-sync-video><source src="static/media/sample_demo/vimeo-RL_00018_0044_egocentric.mp4" type="video/mp4"></video><figcaption>Egocentric ours</figcaption></figure></div></article><article class="sample-demo-card" data-sync-group="sample-demo"><div class="video-case-head"><div><p class="case-label">vimeo-RL</p><h3>00018/0198</h3></div><span>7 frames · 7.0 fps</span></div><div class="sample-demo-videos"><figure><video controls muted playsinline preload="metadata" data-sync-video><source src="static/media/sample_demo/vimeo-RL_00018_0198_top_down.mp4" type="video/mp4"></video><figcaption>Top-down overview</figcaption></figure><figure><video controls muted playsinline preload="metadata" data-sync-video><source src="static/media/sample_demo/vimeo-RL_00018_0198_egocentric.mp4" type="video/mp4"></video><figcaption>Egocentric ours</figcaption></figure></div></article><article class="sample-demo-card" data-sync-group="sample-demo"><div class="video-case-head"><div><p class="case-label">vimeo-RL</p><h3>00018/0206</h3></div><span>7 frames · 7.0 fps</span></div><div class="sample-demo-videos"><figure><video controls muted playsinline preload="metadata" data-sync-video><source src="static/media/sample_demo/vimeo-RL_00018_0206_top_down.mp4" type="video/mp4"></video><figcaption>Top-down overview</figcaption></figure><figure><video controls muted playsinline preload="metadata" data-sync-video><source src="static/media/sample_demo/vimeo-RL_00018_0206_egocentric.mp4" type="video/mp4"></video><figcaption>Egocentric ours</figcaption></figure></div></article></div>
     </section>
 
     <section class="section intro">
@@ -242,68 +253,16 @@
     <section class="section" id="results">
       <div class="section-heading">
         <p class="kicker">Qualitative Results</p>
-        <h2>Effect demonstrations from our experiments</h2>
+        <h2>Effect Demonstrations / 效果展示</h2>
       </div>
-      <div class="comparison-grid">
-        <article class="comparison-card wide">
-          <div class="image-row four">
-            <figure>
-              <img src="static/media/example_stage_lr.png" alt="Low-resolution stage frame">
-              <figcaption>LR input</figcaption>
-            </figure>
-            <figure>
-              <img src="static/media/example_stage_basicvsr.png" alt="BasicVSR++ stage reconstruction">
-              <figcaption>BasicVSR++</figcaption>
-            </figure>
-            <figure>
-              <img src="static/media/example_stage_focusvsr.png" alt="FocusVSR stage reconstruction">
-              <figcaption>FocusVSR</figcaption>
-            </figure>
-            <figure>
-              <img src="static/media/example_stage_ref.png" alt="Reference stage frame">
-              <figcaption>Reference</figcaption>
-            </figure>
-          </div>
-          <div class="card-copy">
-            <h3>Concert scene: bright screens and dense crowd texture</h3>
-            <p>The stage frame contains saturated light, thin screen boundaries, and repeated audience details. These are exactly the regions where a focus map can prevent full-frame over-processing and concentrate refinement where ambiguity is visible.</p>
-          </div>
-        </article>
-
-        <article class="comparison-card">
-          <figure class="image-slider" data-image-slider style="--split: 50%;">
-            <img src="static/media/example_concert_lr.png" alt="Low-resolution concert frame">
-            <div class="slider-after">
-              <img src="static/media/example_concert_sr.png" alt="High-resolution concert frame">
-            </div>
-            <div class="slider-divider" aria-hidden="true"></div>
-            <input type="range" min="0" max="100" value="50" aria-label="Compare LR and GT concert frame">
-            <span class="slider-label left">LR</span>
-            <span class="slider-label right">GT</span>
-          </figure>
-          <div class="card-copy">
-            <h3>Real mobile video degradation</h3>
-            <p>Handheld footage introduces glare, haze, and compression artifacts. The page keeps this sample because it reflects the kind of practical video users actually want to enhance.</p>
-          </div>
-        </article>
-
-        <article class="comparison-card">
-          <figure class="image-slider" data-image-slider style="--split: 50%;">
-            <img src="static/media/example_waterfall_lr.png" alt="Low-resolution waterfall frame">
-            <div class="slider-after">
-              <img src="static/media/example_waterfall_ref.png" alt="Reference waterfall frame">
-            </div>
-            <div class="slider-divider" aria-hidden="true"></div>
-            <input type="range" min="0" max="100" value="50" aria-label="Compare LR and GT waterfall frame">
-            <span class="slider-label left">LR</span>
-            <span class="slider-label right">GT</span>
-          </figure>
-          <div class="card-copy">
-            <h3>High-frequency motion texture</h3>
-            <p>Water and spray are difficult for pixel-aligned losses because many plausible details can match the same LR observation. This motivates reporting perceptual and temporal metrics alongside PSNR and SSIM.</p>
-          </div>
-        </article>
+      <div class="table-heading">
+        <div>
+          <p class="kicker">Cherry-picked Vimeo Test Examples</p>
+          <h3>Center-frame examples where trained FocusVSR improves LPIPS most.</h3>
+        </div>
+        <p>These examples are selected from the 50-clip Vimeo test split using per-clip LPIPS improvement over BasicVSR++. Each row shows LR, BasicVSR++, Ours, and GT.</p>
       </div>
+      <div class="comparison-grid cherry-grid"><article class="comparison-card wide"><div class="card-copy"><p class="case-label">Pick 1</p><h3>Vimeo test clip 00012/0011</h3></div><div class="image-row four"><figure><img src="static/media/cherrypicks/pick1_00012_0011_lr.png" alt="LR input for Vimeo clip 00012/0011"><figcaption>LR input</figcaption></figure><figure><img src="static/media/cherrypicks/pick1_00012_0011_basicvsrpp.png" alt="BasicVSR++ for Vimeo clip 00012/0011"><figcaption>BasicVSR++</figcaption></figure><figure><img src="static/media/cherrypicks/pick1_00012_0011_ours.png" alt="Ours for Vimeo clip 00012/0011"><figcaption>Ours</figcaption></figure><figure><img src="static/media/cherrypicks/pick1_00012_0011_gt.png" alt="GT for Vimeo clip 00012/0011"><figcaption>GT</figcaption></figure></div></article><article class="comparison-card wide"><div class="card-copy"><p class="case-label">Pick 2</p><h3>Vimeo test clip 00012/0024</h3></div><div class="image-row four"><figure><img src="static/media/cherrypicks/pick2_00012_0024_lr.png" alt="LR input for Vimeo clip 00012/0024"><figcaption>LR input</figcaption></figure><figure><img src="static/media/cherrypicks/pick2_00012_0024_basicvsrpp.png" alt="BasicVSR++ for Vimeo clip 00012/0024"><figcaption>BasicVSR++</figcaption></figure><figure><img src="static/media/cherrypicks/pick2_00012_0024_ours.png" alt="Ours for Vimeo clip 00012/0024"><figcaption>Ours</figcaption></figure><figure><img src="static/media/cherrypicks/pick2_00012_0024_gt.png" alt="GT for Vimeo clip 00012/0024"><figcaption>GT</figcaption></figure></div></article><article class="comparison-card wide"><div class="card-copy"><p class="case-label">Pick 3</p><h3>Vimeo test clip 00012/0008</h3></div><div class="image-row four"><figure><img src="static/media/cherrypicks/pick3_00012_0008_lr.png" alt="LR input for Vimeo clip 00012/0008"><figcaption>LR input</figcaption></figure><figure><img src="static/media/cherrypicks/pick3_00012_0008_basicvsrpp.png" alt="BasicVSR++ for Vimeo clip 00012/0008"><figcaption>BasicVSR++</figcaption></figure><figure><img src="static/media/cherrypicks/pick3_00012_0008_ours.png" alt="Ours for Vimeo clip 00012/0008"><figcaption>Ours</figcaption></figure><figure><img src="static/media/cherrypicks/pick3_00012_0008_gt.png" alt="GT for Vimeo clip 00012/0008"><figcaption>GT</figcaption></figure></div></article><article class="comparison-card wide"><div class="card-copy"><p class="case-label">Pick 4</p><h3>Vimeo test clip 00012/0126</h3></div><div class="image-row four"><figure><img src="static/media/cherrypicks/pick4_00012_0126_lr.png" alt="LR input for Vimeo clip 00012/0126"><figcaption>LR input</figcaption></figure><figure><img src="static/media/cherrypicks/pick4_00012_0126_basicvsrpp.png" alt="BasicVSR++ for Vimeo clip 00012/0126"><figcaption>BasicVSR++</figcaption></figure><figure><img src="static/media/cherrypicks/pick4_00012_0126_ours.png" alt="Ours for Vimeo clip 00012/0126"><figcaption>Ours</figcaption></figure><figure><img src="static/media/cherrypicks/pick4_00012_0126_gt.png" alt="GT for Vimeo clip 00012/0126"><figcaption>GT</figcaption></figure></div></article></div>
     </section>
 
     <section class="section tinted" id="experiments">
@@ -328,19 +287,19 @@
       <div class="experiment-grid">
         <article>
           <h3>Datasets</h3>
-          <p>Vimeo is fixed to train 0:900, val 900:950, test 950:1000, and smoke 950:958. The final controlled table evaluates 50 test clips with zero failures; the wild paired table evaluates 1_from_high, 3_from_high, show1_from_high, and show2_from_high with 80 sampled frames per sequence.</p>
+          <p>Vimeo is fixed to train 0:900, val 900:950, test 950:1000, and smoke 950:958. The final controlled table evaluates 50 test clips with zero failures. Wild videos are exported as 35fps presentation clips from show1, show2, IMG_0115, and IMG_0117.</p>
         </article>
         <article>
           <h3>Baselines</h3>
-          <p>BasicVSR++ is the anchor at 35.7354 PSNR, 0.9462 SSIM, 0.0864 LPIPS, and 55.5511 FID-50. Real-ESRGAN alone drops to 28.0246 PSNR and 129.5927 FID-50, while our trained CFM alone reaches 30.2399 PSNR and 149.9160 FID-50, so both are treated as detail candidates rather than full-frame replacements.</p>
+          <p>BasicVSR++ with the official Vimeo90K-BI checkpoint is the anchor at 36.6977 Y-PSNR, 0.9525 Y-SSIM, 0.0856 LPIPS, and 48.6270 internal FID-50. Real-ESRGAN alone drops to 28.0246 Y-PSNR and 129.5927 FID-50, while CFM-clean reaches 30.2242 Y-PSNR and 149.9160 FID-50, so both are treated as candidates rather than final outputs.</p>
         </article>
         <article>
           <h3>Metrics</h3>
-          <p>PSNR/SSIM/LPIPS are reported on the paired center frames. FID is reported only as small-sample FID-50 for Vimeo and FID-80 for wild paired clips. A simple exported-video temporal sanity check gives show1 mean Y frame diff 34.8129 for BasicVSR++ versus 34.8369 for FocusVSR-HQ, and show2 36.7524 versus 36.8018.</p>
+          <p>The final table reports full-frame Y PSNR/SSIM, crop8 Y PSNR/SSIM, RGB PSNR/SSIM, LPIPS-Alex, tLPIPS when available, bootstrap 95% confidence intervals, and internal small-sample FID-50. FID is used only for within-table comparison.</p>
         </article>
         <article>
           <h3>Ablations</h3>
-          <p>H tests raw uncertainty fusion and reaches 34.8054 PSNR with CFM or 34.2038 with Real-ESRGAN. HQ recovers visual detail at 35.3201 PSNR and 55.1194 FID-50. L reaches 35.7650 with CFM and 35.7726 with Real-ESRGAN. MS is the final controlled variant at 35.7725 PSNR, 0.9460 SSIM, and 54.8450 FID-50.</p>
+          <p>The trained risk-aware Laplacian path reaches 36.6332 Y-PSNR, 0.9512 Y-SSIM, 0.0855 LPIPS, and 48.9614 FID-50. The heuristic risk-lap variant improves LPIPS slightly to 0.0848 but costs more PSNR. Oracle analysis shows Real-ESRGAN detail has little paired-fidelity upper-bound gain, so candidate quality remains the main bottleneck.</p>
         </article>
       </div>
       <div class="table-section">
@@ -349,56 +308,24 @@
             <p class="kicker">Benchmark Snapshot</p>
             <h3>Main controlled benchmark</h3>
           </div>
-          <p>Numbers use the remote 50-clip Vimeo snapshot pulled from the current AIAA3201_CV_Project run. Higher PSNR/SSIM is better; lower LPIPS/FID is better. FID is reported as FID-50, not a 50k-image generative benchmark.</p>
+          <p>Numbers use the final Vimeo test50 run with BasicVSR++ switched to the official Vimeo90K-BI checkpoint. Higher PSNR/SSIM is better; lower LPIPS/FID is better. FID is reported as internal FID-50, not a 50k-image generative benchmark.</p>
         </div>
-        <div class="table-shell"><table><thead><tr><th>method</th><th>clips</th><th>failures</th><th>psnr</th><th>ssim</th><th>lpips</th><th>fid</th><th>fid_frames</th></tr></thead><tbody><tr><td>bicubic</td><td>50</td><td>0</td><td>30.4980</td><td>0.8739</td><td>0.2718</td><td>157.5403</td><td>50</td></tr><tr><td>lanczos</td><td>50</td><td>0</td><td>30.7477</td><td>0.8781</td><td>0.2691</td><td>151.9783</td><td>50</td></tr><tr><td>temporal_avg</td><td>50</td><td>0</td><td>27.4477</td><td>0.8107</td><td>0.3498</td><td>198.1388</td><td>50</td></tr><tr><td>srcnn</td><td>50</td><td>0</td><td>31.5463</td><td>0.8899</td><td>0.2030</td><td>131.8713</td><td>50</td></tr><tr><td>realesrgan</td><td>50</td><td>0</td><td>28.0246</td><td>0.8294</td><td>0.1640</td><td>129.5927</td><td>50</td></tr><tr><td>basicvsrpp</td><td>50</td><td>0</td><td>35.7354</td><td>0.9462</td><td>0.0864</td><td>55.5511</td><td>50</td></tr><tr><td>cfm</td><td>50</td><td>0</td><td>30.2399</td><td>0.8484</td><td>0.2193</td><td>149.9160</td><td>50</td></tr><tr><td>focusvsr_h_cfm</td><td>50</td><td>0</td><td>34.8054</td><td>0.9410</td><td>0.0971</td><td>58.6117</td><td>50</td></tr><tr><td>focusvsr_h_realesrgan</td><td>50</td><td>0</td><td>34.2038</td><td>0.9402</td><td>0.0920</td><td>63.5728</td><td>50</td></tr><tr><td>focusvsr_hq_realesrgan</td><td>50</td><td>0</td><td>35.3201</td><td>0.9430</td><td>0.0861</td><td>55.1194</td><td>50</td></tr><tr><td>focusvsr_metric_safe_realesrgan</td><td>50</td><td>0</td><td>35.7725</td><td>0.9460</td><td>0.0878</td><td>54.8450</td><td>50</td></tr></tbody></table></div>
+        <div class="table-shell"><table><thead><tr><th>method</th><th>clips</th><th>failures</th><th>psnr_y_full_mean</th><th>psnr_y_full_ci95_low</th><th>psnr_y_full_ci95_high</th><th>ssim_y_full_mean</th><th>ssim_y_full_ci95_low</th><th>ssim_y_full_ci95_high</th><th>psnr_y_crop8_mean</th><th>psnr_y_crop8_ci95_low</th><th>psnr_y_crop8_ci95_high</th><th>ssim_y_crop8_mean</th><th>ssim_y_crop8_ci95_low</th><th>ssim_y_crop8_ci95_high</th><th>psnr_rgb_full_mean</th><th>psnr_rgb_full_ci95_low</th><th>psnr_rgb_full_ci95_high</th><th>ssim_rgb_full_mean</th><th>ssim_rgb_full_ci95_low</th><th>ssim_rgb_full_ci95_high</th><th>lpips_alex_rgb_mean</th><th>lpips_alex_rgb_ci95_low</th><th>lpips_alex_rgb_ci95_high</th><th>tlpips_alex_rgb_mean</th><th>tlpips_alex_rgb_ci95_low</th><th>tlpips_alex_rgb_ci95_high</th><th>fid_internal</th><th>fid_frames</th></tr></thead><tbody><tr><td>basicvsrpp</td><td>50</td><td>0</td><td>36.697677</td><td>35.078647</td><td>38.286885</td><td>0.952534</td><td>0.938397</td><td>0.964766</td><td>36.650814</td><td>35.035564</td><td>38.253666</td><td>0.951894</td><td>0.937854</td><td>0.964026</td><td>36.342577</td><td>34.776903</td><td>37.879227</td><td>0.949193</td><td>0.934993</td><td>0.961431</td><td>0.085555</td><td>0.065577</td><td>0.108519</td><td>nan</td><td>nan</td><td>nan</td><td>48.626977</td><td>50</td></tr><tr><td>realesrgan</td><td>50</td><td>0</td><td>28.024589</td><td>26.963476</td><td>29.094757</td><td>0.829407</td><td>0.803455</td><td>0.854055</td><td>27.970268</td><td>26.915800</td><td>29.035205</td><td>0.827598</td><td>0.801852</td><td>0.852327</td><td>27.543937</td><td>26.521968</td><td>28.566604</td><td>0.813142</td><td>0.787639</td><td>0.838256</td><td>0.163991</td><td>0.150785</td><td>0.178164</td><td>nan</td><td>nan</td><td>nan</td><td>129.592689</td><td>50</td></tr><tr><td>cfm_clean</td><td>50</td><td>0</td><td>30.224187</td><td>28.906946</td><td>31.524720</td><td>0.848171</td><td>0.821940</td><td>0.872737</td><td>30.209689</td><td>28.891280</td><td>31.515192</td><td>0.847433</td><td>0.821081</td><td>0.872292</td><td>29.442029</td><td>28.262178</td><td>30.596314</td><td>0.824522</td><td>0.799827</td><td>0.847590</td><td>0.218187</td><td>0.196261</td><td>0.241256</td><td>nan</td><td>nan</td><td>nan</td><td>149.916008</td><td>50</td></tr><tr><td>focusvsr_risk_lap_realesrgan</td><td>50</td><td>0</td><td>35.997855</td><td>34.507138</td><td>37.448099</td><td>0.948439</td><td>0.934351</td><td>0.960615</td><td>35.949149</td><td>34.466132</td><td>37.411371</td><td>0.947873</td><td>0.933919</td><td>0.960036</td><td>35.563815</td><td>34.139234</td><td>36.946726</td><td>0.942810</td><td>0.928832</td><td>0.954919</td><td>0.084804</td><td>0.065191</td><td>0.107162</td><td>nan</td><td>nan</td><td>nan</td><td>49.941805</td><td>50</td></tr><tr><td>focusvsr_risk_lap_realesrgan_trained</td><td>50</td><td>0</td><td>36.633173</td><td>35.023149</td><td>38.216446</td><td>0.951224</td><td>0.937032</td><td>0.963481</td><td>36.593464</td><td>34.984594</td><td>38.189363</td><td>0.950648</td><td>0.936631</td><td>0.962843</td><td>36.107091</td><td>34.586518</td><td>37.600733</td><td>0.945780</td><td>0.931734</td><td>0.957958</td><td>0.085491</td><td>0.065489</td><td>0.108492</td><td>nan</td><td>nan</td><td>nan</td><td>48.961353</td><td>50</td></tr></tbody></table></div>
       </div>
       <div class="table-section">
         <div class="table-heading">
           <div>
-            <p class="kicker">Selective Refinement Ablation</p>
-            <h3>FocusVSR-H / L / HQ / MS routing study</h3>
+            <p class="kicker">Oracle Upper Bound</p>
+            <h3>How useful is Real-ESRGAN detail for paired fidelity?</h3>
           </div>
-          <p>The ablation frames FocusVSR as a gated add-on. L variants test learned conservative fusion, H variants test RGB selective refinement, HQ transfers high-frequency detail, and MS keeps the final table variant close to the BasicVSR++ fidelity envelope.</p>
+          <p>The oracle uses GT only for diagnosis, never for inference. It shows that patch/detail selection with Real-ESRGAN barely beats the BasicVSR++ anchor on PSNR, so the candidate is useful visually but not a strong paired-fidelity source.</p>
         </div>
-        <div class="table-shell"><table><thead><tr><th>method</th><th>clips</th><th>missing</th><th>psnr</th><th>ssim</th><th>lpips</th><th>fid</th><th>fid_frames</th></tr></thead><tbody><tr><td>basicvsrpp</td><td>50</td><td>0</td><td>35.7354</td><td>0.9462</td><td>0.0864</td><td>55.5511</td><td>50</td></tr><tr><td>focusvsr_h_cfm</td><td>50</td><td>0</td><td>34.8054</td><td>0.9410</td><td>0.0971</td><td>58.6117</td><td>50</td></tr><tr><td>focusvsr_h_realesrgan</td><td>50</td><td>0</td><td>34.2038</td><td>0.9402</td><td>0.0920</td><td>63.5728</td><td>50</td></tr><tr><td>focusvsr_hq_realesrgan</td><td>50</td><td>0</td><td>35.3201</td><td>0.9430</td><td>0.0861</td><td>55.1194</td><td>50</td></tr><tr><td>focusvsr_l_cfm</td><td>50</td><td>0</td><td>35.7650</td><td>0.9458</td><td>0.0874</td><td>54.9860</td><td>50</td></tr><tr><td>focusvsr_l_realesrgan</td><td>50</td><td>0</td><td>35.7726</td><td>0.9459</td><td>0.0878</td><td>55.2551</td><td>50</td></tr><tr><td>focusvsr_metric_safe_realesrgan</td><td>50</td><td>0</td><td>35.7725</td><td>0.9460</td><td>0.0878</td><td>54.8450</td><td>50</td></tr></tbody></table></div>
-      </div>
-      <div class="table-section">
-        <div class="table-heading">
-          <div>
-            <p class="kicker">Wild Paired Evaluation</p>
-            <h3>Show clips and high-motion sequences</h3>
-          </div>
-          <p>Rows come from the remote wild-paired table. All wild sequences are rerun with BasicVSR++, Real-ESRGAN, and FocusVSR-HQ where the frame folders are available.</p>
-        </div>
-        <div class="table-shell"><table><thead><tr><th>sequence</th><th>method</th><th>total_frames</th><th>sampled_frames</th><th>missing</th><th>resized_to_gt</th><th>psnr</th><th>ssim_512</th><th>fid</th><th>fid_frames</th></tr></thead><tbody><tr><td>1_from_high</td><td>basicvsrpp</td><td>682</td><td>80</td><td>0</td><td>80</td><td>26.1675</td><td>0.8103</td><td>111.7070</td><td>80</td></tr><tr><td>1_from_high</td><td>focusvsr_hq_realesrgan</td><td>682</td><td>80</td><td>0</td><td>80</td><td>26.7831</td><td>0.8159</td><td>103.6374</td><td>80</td></tr><tr><td>1_from_high</td><td>realesrgan</td><td>682</td><td>80</td><td>0</td><td>80</td><td>24.3646</td><td>0.7442</td><td>158.9629</td><td>80</td></tr><tr><td>3_from_high</td><td>basicvsrpp</td><td>455</td><td>80</td><td>0</td><td>80</td><td>26.1018</td><td>0.8273</td><td>20.6604</td><td>80</td></tr><tr><td>3_from_high</td><td>focusvsr_hq_realesrgan</td><td>455</td><td>80</td><td>0</td><td>80</td><td>27.9080</td><td>0.8456</td><td>14.5851</td><td>80</td></tr><tr><td>3_from_high</td><td>realesrgan</td><td>455</td><td>80</td><td>0</td><td>80</td><td>26.1012</td><td>0.8000</td><td>34.2498</td><td>80</td></tr><tr><td>show1_from_high</td><td>basicvsrpp</td><td>666</td><td>80</td><td>0</td><td>0</td><td>34.1238</td><td>0.9658</td><td>18.2428</td><td>80</td></tr><tr><td>show1_from_high</td><td>focusvsr_hq_realesrgan</td><td>666</td><td>80</td><td>0</td><td>0</td><td>34.7671</td><td>0.9687</td><td>17.0897</td><td>80</td></tr><tr><td>show1_from_high</td><td>realesrgan</td><td>666</td><td>80</td><td>0</td><td>0</td><td>31.0616</td><td>0.9284</td><td>46.6176</td><td>80</td></tr><tr><td>show2_from_high</td><td>basicvsrpp</td><td>111</td><td>80</td><td>0</td><td>0</td><td>36.9564</td><td>0.9743</td><td>10.2515</td><td>80</td></tr><tr><td>show2_from_high</td><td>focusvsr_hq_realesrgan</td><td>111</td><td>80</td><td>0</td><td>0</td><td>37.9235</td><td>0.9753</td><td>10.6053</td><td>80</td></tr><tr><td>show2_from_high</td><td>realesrgan</td><td>111</td><td>80</td><td>0</td><td>0</td><td>33.2185</td><td>0.9434</td><td>48.1956</td><td>80</td></tr></tbody></table></div>
-      </div>
-      <div class="result-table-grid">
-        <div class="table-section compact-table">
-          <div class="table-heading stacked">
-            <div>
-              <p class="kicker">Runtime Snapshot</p>
-              <h3>Throughput sanity check</h3>
-            </div>
-            <p>Runtime is reported on the eight-clip remote snapshot for a practical comparison of classical, single-frame, and recurrent baselines.</p>
-          </div>
-          <div class="table-shell"><table><thead><tr><th>method</th><th>clips</th><th>seconds_total</th><th>seconds_per_clip</th></tr></thead><tbody><tr><td>bicubic</td><td>8</td><td>0.0010</td><td>0.0001</td></tr><tr><td>lanczos</td><td>8</td><td>0.0139</td><td>0.0017</td></tr><tr><td>temporal_avg</td><td>8</td><td>0.0186</td><td>0.0023</td></tr><tr><td>srcnn</td><td>8</td><td>0.2439</td><td>0.0305</td></tr><tr><td>realesrgan</td><td>8</td><td>2.0804</td><td>0.2601</td></tr><tr><td>basicvsrpp</td><td>8</td><td>0.9125</td><td>0.1141</td></tr></tbody></table></div>
-        </div>
-        <div class="table-section compact-table">
-          <div class="table-heading stacked">
-            <div>
-              <p class="kicker">Legacy 100-Clip Comparison</p>
-              <h3>Earlier benchmark run</h3>
-            </div>
-            <p>The legacy table preserves the 100-clip controlled benchmark so the current 50-clip snapshot can be compared against the previous experimental state.</p>
-          </div>
-          <div class="table-shell"><table><thead><tr><th>method</th><th>clips</th><th>failures</th><th>psnr</th><th>ssim</th><th>lpips</th></tr></thead><tbody><tr><td>bicubic</td><td>100</td><td>0</td><td>30.2356</td><td>0.8603</td><td>0.2958</td></tr><tr><td>lanczos</td><td>100</td><td>0</td><td>30.5157</td><td>0.8649</td><td>0.2945</td></tr><tr><td>temporal_avg</td><td>100</td><td>0</td><td>26.3882</td><td>0.7902</td><td>0.3689</td></tr><tr><td>srcnn</td><td>100</td><td>0</td><td>31.2471</td><td>0.8780</td><td>0.2237</td></tr><tr><td>realesrgan</td><td>100</td><td>0</td><td>27.8649</td><td>0.8266</td><td>0.1729</td></tr><tr><td>basicvsrpp</td><td>100</td><td>0</td><td>34.9678</td><td>0.9330</td><td>0.1141</td></tr><tr><td>cfm</td><td>100</td><td>0</td><td>29.8911</td><td>0.8368</td><td>0.2305</td></tr></tbody></table></div>
-        </div>
+        <div class="table-shell"><table><thead><tr><th>method</th><th>clips</th><th>psnr_y_full</th><th>ssim_y_full</th><th>psnr_y_crop8</th><th>ssim_y_crop8</th><th>psnr_rgb_full</th><th>ssim_rgb_full</th><th>lpips_alex_rgb</th></tr></thead><tbody><tr><td>basicvsrpp</td><td>50</td><td>36.69767682992679</td><td>0.9525339694781565</td><td>36.65081359944729</td><td>0.9518937053731881</td><td>36.342576701500455</td><td>0.9491932160190446</td><td>0.08555470898747444</td></tr><tr><td>oracle_patch_choose_realesrgan_p16</td><td>50</td><td>36.66297274358685</td><td>0.9523572904151686</td><td>36.616073469332946</td><td>0.9517100093584535</td><td>36.297181143866794</td><td>0.948667159234991</td><td>0.08517663018777967</td></tr><tr><td>oracle_patch_choose_realesrgan_p32</td><td>50</td><td>36.65655975100974</td><td>0.9522942652532518</td><td>36.609153820456044</td><td>0.9516551263112217</td><td>36.296428698809365</td><td>0.9487803122206147</td><td>0.08520345086231827</td></tr><tr><td>oracle_detail_alpha_realesrgan_p16</td><td>50</td><td>36.695279949853905</td><td>0.9523138185464533</td><td>36.64534633916995</td><td>0.9516768964757887</td><td>36.15951874743398</td><td>0.9464242954223634</td><td>0.0844213697500527</td></tr><tr><td>oracle_detail_alpha_realesrgan_p32</td><td>50</td><td>36.66284583728247</td><td>0.9521491610455499</td><td>36.61359468794153</td><td>0.9515113177299831</td><td>36.13291253594847</td><td>0.9462571596185623</td><td>0.08484456438571214</td></tr></tbody></table></div>
       </div>
       <div class="metric-notes">
         <article>
           <h3>Current signal</h3>
-          <p>BasicVSR++ remains the strongest full-frame reconstruction anchor. FocusVSR-MS is the metric-safe controlled-table path, while FocusVSR-HQ is the presentation path for sharper local detail under an uncertainty mask.</p>
+          <p>BasicVSR++ remains the strongest full-frame reconstruction anchor. The trained risk-aware Laplacian FocusVSR path is kept as the final selective-refinement presentation method because it stays close to the BasicVSR++ fidelity envelope while transferring only local Y-channel high-frequency detail.</p>
         </article>
         <article>
           <h3>FID note</h3>
@@ -414,13 +341,13 @@
       </div>
       <div class="takeaway-grid">
         <p>
-          The final claim is intentionally conservative: BasicVSR++ remains the reliable global reconstruction path, while FocusVSR improves how refinement is routed. The best presentation variant keeps the backbone's low-frequency structure and selectively transfers high-frequency detail only where the focus map indicates uncertainty.
+          The final claim is intentionally conservative: BasicVSR++ remains the reliable global reconstruction path, while FocusVSR improves how refinement is routed. The current presentation variant keeps the backbone's low-frequency structure and selectively transfers high-frequency Y-channel detail using the trained risk head.
         </p>
         <ul class="roadmap-list">
-          <li>Finalize quantitative tables for Vimeo paired clips: complete. The page now uses the 50-clip table with BasicVSR++ at 35.7354 PSNR / 55.5511 FID-50 and FocusVSR-MS at 35.7725 PSNR / 54.8450 FID-50.</li>
-          <li>Add visualized focus masks for the representative examples: complete. show1, show2, wild1, and wild3 include FocusVSR-HQ videos plus alpha/focus-map mp4 exports.</li>
-          <li>Compare full-frame refinement against selective refinement: complete. Real-ESRGAN full-frame gives 28.0246 PSNR / 129.5927 FID-50, while selective HQ keeps 35.3201 PSNR / 55.1194 FID-50 and MS keeps 35.7725 PSNR / 54.8450 FID-50.</li>
-          <li>Measure temporal flicker after local detail enhancement: checked on exported show videos with mean Y frame difference. FocusVSR-HQ is close to BasicVSR++ on show1, 34.8369 versus 34.8129, and show2, 36.8018 versus 36.7524.</li>
+          <li>Finalize quantitative tables for Vimeo paired clips: complete. The page now uses <code>vimeo_test50_multimetric.csv</code> with BasicVSR++ at 36.6977 Y-PSNR / 48.6270 FID-50 and trained FocusVSR at 36.6332 Y-PSNR / 48.9614 FID-50.</li>
+          <li>Add visual examples for representative videos: complete for the current page bundle. show1, show2, IMG_0115, and IMG_0117 are exported at 35fps with GT, LR, BasicVSR++, and Ours only.</li>
+          <li>Compare full-frame refinement against selective refinement: complete. Real-ESRGAN full-frame gives 28.0246 Y-PSNR / 129.5927 FID-50, while trained selective FocusVSR stays near the BasicVSR++ fidelity envelope.</li>
+          <li>Measure temporal flicker after local detail enhancement: pending full 7-frame tLPIPS cache for every method; current page videos are presentation exports, not the temporal metric table.</li>
         </ul>
       </div>
     </section>

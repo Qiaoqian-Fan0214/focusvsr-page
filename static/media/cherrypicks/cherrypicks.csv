@@ -1,0 +1,5 @@
+rank,clip_id,lr,basic,ours,gt
+1,00012/0011,static/media/cherrypicks/pick1_00012_0011_lr.png,static/media/cherrypicks/pick1_00012_0011_basicvsrpp.png,static/media/cherrypicks/pick1_00012_0011_ours.png,static/media/cherrypicks/pick1_00012_0011_gt.png
+2,00012/0024,static/media/cherrypicks/pick2_00012_0024_lr.png,static/media/cherrypicks/pick2_00012_0024_basicvsrpp.png,static/media/cherrypicks/pick2_00012_0024_ours.png,static/media/cherrypicks/pick2_00012_0024_gt.png
+3,00012/0008,static/media/cherrypicks/pick3_00012_0008_lr.png,static/media/cherrypicks/pick3_00012_0008_basicvsrpp.png,static/media/cherrypicks/pick3_00012_0008_ours.png,static/media/cherrypicks/pick3_00012_0008_gt.png
+4,00012/0126,static/media/cherrypicks/pick4_00012_0126_lr.png,static/media/cherrypicks/pick4_00012_0126_basicvsrpp.png,static/media/cherrypicks/pick4_00012_0126_ours.png,static/media/cherrypicks/pick4_00012_0126_gt.png

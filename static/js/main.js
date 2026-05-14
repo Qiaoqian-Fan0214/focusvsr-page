@@ -12,10 +12,14 @@ document.querySelectorAll("[data-image-slider]").forEach((slider) => {
   update();
 });
 
+const setupVideoSync = () => {
 document.querySelectorAll("[data-sync-group]").forEach((group) => {
   const videos = Array.from(group.querySelectorAll("[data-sync-video]"));
 
   videos.forEach((video) => {
+    if (video.dataset.syncReady === "true") return;
+    video.dataset.syncReady = "true";
+
     video.addEventListener("play", () => {
       videos.forEach((peer) => {
         if (peer === video) return;
@@ -41,6 +45,9 @@ document.querySelectorAll("[data-sync-group]").forEach((group) => {
     });
   });
 });
+};
+
+setupVideoSync();
 
 document.querySelectorAll("[data-video-slot]").forEach(async (slot) => {
   const src = slot.dataset.videoSrc;
@@ -50,10 +57,12 @@ document.querySelectorAll("[data-video-slot]").forEach(async (slot) => {
   slot.classList.add("is-ready");
   slot.innerHTML = `
     <figure>
-      <video controls muted playsinline preload="metadata">
+      <video controls muted playsinline preload="metadata" data-sync-video>
         <source src="${src}" type="video/mp4">
       </video>
       <figcaption>${title}</figcaption>
     </figure>
   `;
 });
+
+setupVideoSync();

@@ -1,0 +1,7 @@
+dataset,clip_id,frames,fps,top_down,egocentric
+REDS-sample,002,100,24.0,static/media/sample_demo/REDS-sample_002_top_down.mp4,static/media/sample_demo/REDS-sample_002_egocentric.mp4
+REDS-sample,007,100,24.0,static/media/sample_demo/REDS-sample_007_top_down.mp4,static/media/sample_demo/REDS-sample_007_egocentric.mp4
+vimeo-RL,00018/0043,7,7.0,static/media/sample_demo/vimeo-RL_00018_0043_top_down.mp4,static/media/sample_demo/vimeo-RL_00018_0043_egocentric.mp4
+vimeo-RL,00018/0044,7,7.0,static/media/sample_demo/vimeo-RL_00018_0044_top_down.mp4,static/media/sample_demo/vimeo-RL_00018_0044_egocentric.mp4
+vimeo-RL,00018/0198,7,7.0,static/media/sample_demo/vimeo-RL_00018_0198_top_down.mp4,static/media/sample_demo/vimeo-RL_00018_0198_egocentric.mp4
+vimeo-RL,00018/0206,7,7.0,static/media/sample_demo/vimeo-RL_00018_0206_top_down.mp4,static/media/sample_demo/vimeo-RL_00018_0206_egocentric.mp4
