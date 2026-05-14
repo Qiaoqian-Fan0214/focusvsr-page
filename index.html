@@ -343,12 +343,6 @@
         <p>
           The final claim is intentionally conservative: BasicVSR++ remains the reliable global reconstruction path, while FocusVSR improves how refinement is routed. The current presentation variant keeps the backbone's low-frequency structure and selectively transfers high-frequency Y-channel detail using the trained risk head.
         </p>
-        <ul class="roadmap-list">
-          <li>Finalize quantitative tables for Vimeo paired clips: complete. The page now uses <code>vimeo_test50_multimetric.csv</code> with BasicVSR++ at 36.698 Y-PSNR / 48.627 FID-50 and trained FocusVSR at 36.633 Y-PSNR / 48.961 FID-50.</li>
-          <li>Add visual examples for representative videos: complete for the current page bundle. show1, show2, IMG_0115, and IMG_0117 are exported at 35fps with GT, LR, BasicVSR++, and Ours only.</li>
-          <li>Compare full-frame refinement against selective refinement: complete. Real-ESRGAN full-frame gives 28.025 Y-PSNR / 129.593 FID-50, while trained selective FocusVSR stays near the BasicVSR++ fidelity envelope.</li>
-          <li>Measure temporal flicker after local detail enhancement: pending full 7-frame tLPIPS cache for every method; current page videos are presentation exports, not the temporal metric table.</li>
-        </ul>
       </div>
     </section>
   </main>
